@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/iCheck/square/blue.css">
+    <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/parsley.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -41,34 +41,24 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your Track</p>
-        <?php
-        use yii\helpers\Html;
-        use yii\bootstrap\ActiveForm;
-        $form = ActiveForm::begin([
-            'id' => 'login-form',
-            'layout' => 'horizontal',
-            'fieldConfig' => [
-                'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-                'labelOptions' => ['class' => 'col-lg-1 control-label'],
-            ],
-        ]); ?>
+        <p class="login-box-msg">Sign in to start your session</p>
+        <form  id="loginform" method="post" data-parsley-validate="">
             <div class="form-group has-feedback">
-                <input type="email" name="TUser[username]" class="form-control" placeholder="Email or Username or Mobile">
+                <input type="email" class="form-control" data-parsley-error-message="Email or Username or Mobile Cannot be blank" placeholder="Email" required>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="TUser[password]" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" data-parsley-error-message="Password Cannot be blank" required>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <!-- /.col -->
                 <div class="col-xs-offset-8 col-xs-4">
-                    <?= Html::submitButton('Sign In', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
-        <?php ActiveForm::end(); ?>
+        </form>
     </div>
     <!-- /.login-box-body -->
 </div>
@@ -79,6 +69,7 @@
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/iCheck/icheck.min.js"></script>
+<script src="<?=\Yii::getAlias('@web');?>/dist/assets/parsley.js"></script>
 <script>
     $(function () {
         $('input').iCheck({
@@ -86,7 +77,18 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' /* optional */
         });
+
+
+        $('#loginform').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+            }).on('form:submit', function() {
+                console.log('yes');
+                return false; // Don't submit form for this demo
+            });
     });
+
 </script>
 </body>
 </html>
