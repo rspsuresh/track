@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/css/AdminLTE.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/iCheck/square/blue.css">
-    <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/parsley.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -33,6 +32,9 @@
         background-position:center center;
         background-size:cover
     }
+    .error{
+        color:red;
+    }
 </style>
 <body class="hold-transition login-page backgroundFortrack">
 <div class="login-box">
@@ -42,19 +44,22 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-        <form  id="loginform" method="post" data-parsley-validate="">
+        <form  id="loginform" name="loginform" method="post">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" data-parsley-error-message="Email or Username or Mobile Cannot be blank" placeholder="Email" required>
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <input type="text" class="form-control" name="username"
+                       placeholder="Email" required>
+<!--                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>-->
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password" data-parsley-error-message="Password Cannot be blank" required>
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <input type="password" class="form-control" name="password"
+                       placeholder="Password" required>
+<!--                <span class="glyphicon glyphicon-lock form-control-feedback"></span>-->
             </div>
+            <div id="incorrect" class="error" style="display: none"><p class="text-center" >Incorrect Username and Password</p></div>
             <div class="row">
                 <!-- /.col -->
                 <div class="col-xs-offset-8 col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button  class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -64,30 +69,57 @@
 </div>
 <!-- /.login-box -->
 <!-- jQuery 3 -->
-<script src="<?=\Yii::getAlias('@web');?>/dist/assets/jquery/dist/jquery.min.js"></script>
+<!--<script src="--><?//=\Yii::getAlias('@web');?><!--/dist/assets/jquery/dist/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/iCheck/icheck.min.js"></script>
-<script src="<?=\Yii::getAlias('@web');?>/dist/assets/parsley.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    //$(function () {
+    // $('input').iCheck({
+    //     checkboxClass: 'icheckbox_square-blue',
+    //     radioClass: 'iradio_square-blue',
+    //     increaseArea: '20%' /* optional */
+    // });
+    $("#loginform").on("submit", function(event) {
+        event.preventDefault();
+    }).validate({
+        rules: {
+            username: "required",
+            password: "required"
+        },
+        messages: {
+            username: "Please enter your username",
+            password: "Please enter your password",
+        },
+        submitHandler: function(form,event) {
+            event.preventDefault();
+            var formData = new FormData($('#loginform')[0]);
+            var url='<?=Yii::$app->urlManager->createUrl(['site/login'])?>'
+            $.ajax({
+                url: url,
+                type: "post",
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (result) {
+                    var obj = JSON.parse(result);
+                    if (obj.flag === "S") {
+                        window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index'])?>";
+                    }else{
 
-
-        $('#loginform').parsley().on('field:validated', function() {
-            var ok = $('.parsley-error').length === 0;
-            $('.bs-callout-info').toggleClass('hidden', !ok);
-            $('.bs-callout-warning').toggleClass('hidden', ok);
-            }).on('form:submit', function() {
-                console.log('yes');
-                return false; // Don't submit form for this demo
+                       $("#incorrect").show();
+                    }
+                }
             });
+            return false;
+        }
     });
+
+    //  });
 
 </script>
 </body>

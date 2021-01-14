@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\TUser;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -71,20 +72,18 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        Yii::$app->controller->enableCsrfValidation = false;
         $this->layout=false;
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if(Yii::$app->request->isAjax && !empty($_POST)){
+             $UserReturn=TUser::loginCheck($_POST);
+             return json_encode($UserReturn);
+        }else{
+            session_destroy();
+            return $this->render('login');
         }
-
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
     }
 
     /**
@@ -95,8 +94,9 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
-        return $this->goHome();
+        session_destroy();
+        unset($_SESSION);
+        return $this->redirect(['/site/home']);
     }
 
     /**

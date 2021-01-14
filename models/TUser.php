@@ -57,4 +57,26 @@ class TUser extends \yii\db\ActiveRecord
             'user_createdat' => 'User Createdat',
         ];
     }
+    public static  function loginCheck($data){
+        $Usermodel=self::find()->where('(username=:username or mobile=:username or email=:username) and password=:password',
+            [':username'=>$data['username'],
+                ':password'=>$data['password']
+            ])->asArray()->one();
+        //echo "<pre>";print_r($Usermodel);die;
+        $statusarray=[];
+       if(!empty($Usermodel)){
+           if(!isset($_SESSION))
+           {
+               session_start();
+           }
+           $_SESSION['username']=$Usermodel['username'];
+           $statusarray['flag']="S";
+           $statusarray['msg']="login successfully";
+       }else{
+           $statusarray['flag']="E";
+           $statusarray['msg']="Incorrect username and password";
+       }
+       return $statusarray;
+    }
+
 }
