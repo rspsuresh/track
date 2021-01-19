@@ -77,12 +77,6 @@
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/iCheck/icheck.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 <script type="text/javascript">
-    //$(function () {
-    // $('input').iCheck({
-    //     checkboxClass: 'icheckbox_square-blue',
-    //     radioClass: 'iradio_square-blue',
-    //     increaseArea: '20%' /* optional */
-    // });
     $("#loginform").on("submit", function(event) {
         event.preventDefault();
     }).validate({
@@ -118,9 +112,6 @@
             return false;
         }
     });
-
-    //  });
-
 </script>
 </body>
 </html>

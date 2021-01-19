@@ -81,7 +81,7 @@ class SiteController extends Controller
              $UserReturn=TUser::loginCheck($_POST);
              return json_encode($UserReturn);
         }else{
-            session_destroy();
+            //session_destroy();
             return $this->render('login');
         }
     }
