@@ -69,7 +69,12 @@ class TUser extends \yii\db\ActiveRecord
            {
                session_start();
            }
+           $DeviceModel=DeviceMaster::findOne($Usermodel['device']);
+
            $_SESSION['username']=$Usermodel['username'];
+           $_SESSION['userid']=$Usermodel['u_id'];
+           $_SESSION['channelapi']=$DeviceModel->channel_api;
+           $_SESSION['channelid']=$DeviceModel->channel_id;
            $statusarray['flag']="S";
            $statusarray['msg']="login successfully";
        }else{

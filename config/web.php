@@ -12,6 +12,14 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'cloudinary' => [
+            'class' => \nikosid\cloudinary\CloudinaryComponent::class,
+            'cloud_name' => 'project301220',
+            'api_key' => '138435171694115',
+            'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
+            'cdn_subdomain' => true,//optional
+            'useSiteDomain' => false,
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'trackApp',

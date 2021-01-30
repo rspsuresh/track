@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\TUser;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -125,5 +126,24 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionCheckunique(){
+        $type=$_REQUEST['type'];
+        $error=['username is already taken'];
+        switch ($type){
+            case "U";
+               $userModel=User::find()->where('username=:usrname',[':usrname'=>$_REQUEST['username']])->one();
+               return !empty($userModel)?true:false;
+               break;
+            case "M":
+                $userModel=User::find()->where('mobile=:mobile',[':mobile'=>$_REQUEST['mobile']])->one();
+                return !empty($userModel)?true:false;
+                break;
+            case "E":
+                $userModel=User::find()->where('email=:email',[':email'=>$_REQUEST['email']])->one();
+                return !empty($userModel)?true:false;
+                break;
+        }
     }
 }

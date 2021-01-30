@@ -24,6 +24,8 @@
                     <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"><i class="fa fa-circle-o"></i>
                             Create User</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/engine')?>"><i class="fa fa-circle-o"></i>
+                            Engine On/Off</a></li>
                 </ul>
             </li>
         </ul>
