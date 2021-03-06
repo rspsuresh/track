@@ -33,8 +33,8 @@ class TUser extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'mobile', 'email', 'password', 'user_status', 'user_type'], 'required'],
-            [['user_status', 'user_type'], 'string'],
-            [['user_createdat'], 'safe'],
+            [['user_status', 'user_type','user_profile'], 'string'],
+            [['user_createdat','user_profile'], 'safe'],
             [['username'], 'string', 'max' => 255],
             [['mobile', 'email'], 'string', 'max' => 100],
             [['password'], 'string', 'max' => 50],
@@ -62,7 +62,7 @@ class TUser extends \yii\db\ActiveRecord
             [':username'=>$data['username'],
                 ':password'=>$data['password']
             ])->asArray()->one();
-        //echo "<pre>";print_r($Usermodel);die;
+
         $statusarray=[];
        if(!empty($Usermodel)){
            if(!isset($_SESSION))
@@ -70,7 +70,6 @@ class TUser extends \yii\db\ActiveRecord
                session_start();
            }
            $DeviceModel=DeviceMaster::findOne($Usermodel['device']);
-
            $_SESSION['username']=$Usermodel['username'];
            $_SESSION['userid']=$Usermodel['u_id'];
            $_SESSION['channelapi']=$DeviceModel->channel_api;

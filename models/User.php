@@ -37,9 +37,9 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             [['username', 'mobile', 'email', 'password', 'user_status', 'user_type'], 'required'],
-            [['gender', 'address', 'user_status', 'user_type'], 'string'],
+            [['gender', 'address', 'user_status', 'user_type','user_profile'], 'string'],
             [['age', 'device'], 'integer'],
-            [['user_createdat'], 'safe'],
+            [['user_createdat','profile','user_profile'], 'safe'],
             [['username'], 'string', 'max' => 255],
             [['mobile', 'email'], 'string', 'max' => 100],
             [['password'], 'string', 'max' => 50],

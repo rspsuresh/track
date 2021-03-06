@@ -20,7 +20,12 @@ class DashboardController extends \yii\web\Controller
             $user=$this->saveandupdate($_POST);
             return json_encode($user);
         }else{
-            return $this->render('create');
+            $User='';
+            if(isset($_GET['id'])){
+                $userid=intval($_GET['id']);
+                $User=User::findOne($userid);
+            }
+            return $this->render('create',['user'=>$User]);
         }
 
     }
@@ -45,6 +50,12 @@ class DashboardController extends \yii\web\Controller
             $UserModel->user_type="U";
             $UserModel->password=$data['password'];
             $UserModel->user_createdat=date('Y-m-d H:i:s');
+            if(isset($_FILES)){
+                $target_dir = "assets/uploads/";
+                $target_file = $target_dir . basename($_FILES["profile"]["name"]);
+                move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file);
+                $UserModel->user_profile=$_FILES["profile"]["name"];
+            }
             if($UserModel->save(false)){
                 $returnArr=['flag'=>'S','code'=>'200','msg'=>$msg];
             }else{
@@ -84,7 +95,6 @@ class DashboardController extends \yii\web\Controller
         curl_setopt_array($ch, $optArray);
 // execute request and get response
         $result = curl_exec($ch);
-
         return $result;
     }
 
@@ -92,10 +102,10 @@ class DashboardController extends \yii\web\Controller
     {
         $reTEngineArr=[];
         if(isset($_REQUEST) && isset($_REQUEST['status'])){
-             $EngineModel=EngineTracker::find()->where('device_id=:device',[':device'=>1])->one();
-             if(empty($EngineModel)){
-                 $EngineModel=new EngineTracker();
-             }
+            $EngineModel=EngineTracker::find()->where('device_id=:device',[':device'=>1])->one();
+            if(empty($EngineModel)){
+                $EngineModel=new EngineTracker();
+            }
             $EngineModel->status=$_REQUEST['status']==1?'ON':'OFF';
             $EngineModel->created_at=date("Y-m-d H:i:s");
             $EngineModel->created_by=$_SESSION['userid'];
@@ -111,27 +121,80 @@ class DashboardController extends \yii\web\Controller
             return $this->render('engine');
         }
     }
-
+    public function actionClouddelete(){
+                \Cloudinary::config(array(
+            'cloud_name' => 'project301220',
+            'api_key' => '138435171694115',
+            'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
+        ));
+        if(isset($_GET['id'])){
+                    $api = new \Cloudinary\Api();
+                   $api->delete_resources(['authorizedimage/'.$_GET['id']], $options = array());
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Deleted Successfully" ];
+        }
+        return  json_encode($reTEngineArr);
+    }
     public function actionCloud(){
+//        \Cloudinary::config(array(
+//            'cloud_name' => 'project301220',
+//            'api_key' => '138435171694115',
+//            'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
+//        ));
+//        $api = new \Cloudinary\Api();
+//        $api->delete_resources(['authorizedimage/authorizedimage-893'], $options = array());
+
+        $model=new AuthorizeImg();
+        //  $api = new \Cloudinary\Api();
+        //  $api->delete_resources(['authorizedimage/'], $options = array());
+
+        //$result = \Cloudinary\Uploader::destroy(540, $options = array());
+        // echo "<pre>";print_r($api);die;
         if(isset(\Yii::$app->request->isPost) && $_FILES){
             $file=UploadedFile::getInstance($model, 'picture');
-            //$test=\Cloudinary\Uploader::upload($file->tempName, array("public_id" => "authorizedimage/".rand(1,1000)));
-            $test=\Cloudinary\Uploader::upload($file->tempName, array("public_id" => "authorizedimage/".rand(1,1000)));
-        }else {
-            return $this->render('cloud',['model'=>$model,'resultarr'=>$resultArray]);
+            $publicId='authorizedimage-'.rand(1,1000);
+            $AuthModel=new  \app\models\AuthorizeImg;
+            $AuthModel->picture=$publicId;
+            $AuthModel->created_by=$_SESSION['userid'];
+            $AuthModel->save();
+
+            \Cloudinary\Uploader::upload($file->tempName, array("folder" => "authorizedimage/","public_id" =>$publicId ));
+
         }
+        return $this->render('cloud',['model'=>$model]);
+        //  }
     }
 
     public function actionReslist(){
         $resultArray=[];
         $model=new AuthorizeImg();
         $api = new \Cloudinary\Api();
-        $result = $api->resource('',array("prefix" => "authorizedimage"));
+        $result = $api->resource('',["type" => "upload", "max_results" => 5000]);
         foreach ($result['resources'] as $key=>$val){
             $publicId=explode('/',$val['public_id']);
             $resultArray[$key]['url']=$val['secure_url'];
             $resultArray[$key]['type']=$publicId[0];
+            if($publicId[0] =='authorizedimage'){
+                $resultArray[$key]['name']=$publicId;
+            }
         }
+    //    echo "<pre>";print_r($resultArray);die;
         return $this->render('resgrid',['resultarr'=>$resultArray]);
+    }
+
+    public function actionUserlist(){
+        $UserModel=User::find()->where('user_type=:type',[':type'=>'U'])->asArray()->all();
+        return $this->render('listusers',['resultarr'=>$UserModel]);
+    }
+    public function actionChangestatus(){
+
+        $filterId=intval($_GET['id']);
+        $UserModel=User::findOne($filterId);
+        $UserModel->user_status=$UserModel->user_status=='A'?'I':'A';
+        if($UserModel->save(false)){
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Status Changed Successfully" ];
+        }else{
+            $reTEngineArr=['flag'=>'E','Code'=>500,'msg'=>"Something Went Wrong" ];
+        }
+        return  json_encode($reTEngineArr);
     }
 }
