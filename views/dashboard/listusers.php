@@ -97,6 +97,7 @@
                                                onchange="statuschange('<?=$rowval['u_id']?>',event)">
                                         <span class="slider round"></span>
                                     </label>
+                                <button  onclick="sendmail('<?=$rowval['u_id']?>')" class="btn btn-info pull-right">Mail</button>
                             </td>
                         </tr>
                     <?php } ?>
@@ -126,6 +127,20 @@
         $.ajax({
             type: 'GET',
             url: '<?=Yii::$app->urlManager->createUrl('dashboard/changestatus')?>?id='+id,
+            success:function(data){
+                var obj = JSON.parse(data);
+                if (obj.flag === "S") {
+                    swal("Success", obj.msg, "success");
+                }else{
+                    swal("Error", obj.msg, "Error");
+                }
+            }
+        });
+    }
+    function sendmail(user){
+        $.ajax({
+            type: 'GET',
+            url: '<?=Yii::$app->urlManager->createUrl('dashboard/sendmail')?>?id='+user,
             success:function(data){
                 var obj = JSON.parse(data);
                 if (obj.flag === "S") {

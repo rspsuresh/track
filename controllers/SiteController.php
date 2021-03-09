@@ -132,9 +132,9 @@ class SiteController extends Controller
         $type=$_REQUEST['type'];
         $error=['username is already taken'];
         switch ($type){
-            case "U";
+            case "U":
                $userModel=User::find()->where('username=:usrname',[':usrname'=>$_REQUEST['username']])->one();
-               return !empty($userModel)?true:false;
+               echo !empty($userModel)?true:false;
                break;
             case "M":
                 $userModel=User::find()->where('mobile=:mobile',[':mobile'=>$_REQUEST['mobile']])->one();
@@ -142,7 +142,7 @@ class SiteController extends Controller
                 break;
             case "E":
                 $userModel=User::find()->where('email=:email',[':email'=>$_REQUEST['email']])->one();
-                return !empty($userModel)?true:false;
+                echo  !empty($userModel)?true:false;
                 break;
         }
     }

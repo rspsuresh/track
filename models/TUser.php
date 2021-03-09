@@ -58,7 +58,7 @@ class TUser extends \yii\db\ActiveRecord
         ];
     }
     public static  function loginCheck($data){
-        $Usermodel=self::find()->where('(username=:username or mobile=:username or email=:username) and password=:password',
+        $Usermodel=self::find()->where('(username=:username or mobile=:username or email=:username) and password=:password and user_status="A"',
             [':username'=>$data['username'],
                 ':password'=>$data['password']
             ])->asArray()->one();

@@ -20,7 +20,7 @@ class DashboardController extends \yii\web\Controller
             $user=$this->saveandupdate($_POST);
             return json_encode($user);
         }else{
-            $User='';
+            $User=new User();
             if(isset($_GET['id'])){
                 $userid=intval($_GET['id']);
                 $User=User::findOne($userid);
@@ -194,6 +194,23 @@ class DashboardController extends \yii\web\Controller
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Status Changed Successfully" ];
         }else{
             $reTEngineArr=['flag'=>'E','Code'=>500,'msg'=>"Something Went Wrong" ];
+        }
+        return  json_encode($reTEngineArr);
+    }
+
+    public function actionSendmail(){
+        $filterId=intval($_GET['id']);
+        $UserModel=User::findOne($filterId);
+
+      //  $recipient = $UserModel->email;
+        $recipient ='rsprampaul14321@gmail.com';
+        $subject = 'Password Invite';
+        $message ="<b>Your Password is :</b>".$UserModel->password;
+        $sender = "From: rsprampaul14321@gmail.com";
+        if(mail($recipient, $subject, $message, $sender)){
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully" ];
+        }else{
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Error in mail send" ];
         }
         return  json_encode($reTEngineArr);
     }

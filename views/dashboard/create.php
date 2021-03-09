@@ -26,7 +26,11 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-10">
-                                <input type="text" value="<?=$user->username?>" <?=$disabledCheck?> name="username" required class="form-control" id="username" placeholder="Username">
+                                <input type="text"
+                                       value="<?=$user->username?>"
+                                    <?=$disabledCheck?> name="username"
+                                       required class="form-control"
+                                       id="username" placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
@@ -82,7 +86,7 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">Profile</label>
                             <div class="col-sm-10">
-                                 <input type="file" name="profile" accept="image/*">
+                                <input type="file" name="profile" accept="image/*">
                                 <?php if($user->user_profile) { ?>
                                     <img width=50 height=50 class="img-circle" src="<?=Yii::$app->request->baseUrl?>/assets/uploads/<?=$user->user_profile?>">
                                 <?php } ?>
@@ -92,7 +96,7 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                        <button type="submit" id="submit" class="btn btn-info pull-right">Sign in</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
@@ -100,56 +104,137 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
         </div>
     </div>
 </section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script src="<?=\Yii::getAlias('@web');?>/dist/assets/jquery.validate.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>-->
 <script type="text/javascript">
-    $("#register").on("submit", function(event) {
-        event.preventDefault();
-    }).validate({
-        rules: {
-            username: {
-                required:true
-            },
-            password: "required",
-            age: "required",
-            gender: "required",
-            device: "required",
-            email: "required",
-            mobilenumber: "required"
-        },
-        messages: {
-            username:{
-                 required:"Username cannot be blank"
-            },
-            passwrd: "Password cannot be blank",
-            age: "Age cannot be blank",
-            gender: "Gender cannot be blank",
-            device: "Device cannot be blank",
-            email: "Email Address cannot be blank",
-            mobilenumber: "Mobile Number cannot be blank"
-        },
-        onkeyup: false,
-        onblur: true,
-        submitHandler: function(form,event) {
+    $(document).ready(function(){
+        //var response;
+        //$.validator.addMethod(
+        //    "uniqueUserName",
+        //    function(value, element) {
+        //        $.ajax({
+        //            type: "POST",
+        //            url:'<?//=Yii::$app->urlManager->createUrl('site/checkunique?type=U')?>//',
+        //            data: "username="+value,
+        //            dataType:"html",
+        //            success: function(msg)
+        //            {
+        //                //If username exists, set response to true
+        //                response = ( msg == 'true' ) ? true : false;
+        //            }
+        //        });
+        //        return response;
+        //    },
+        //    "Username is Already Taken"
+        //);
+
+oot
+        $("#submit").click(function (event) {
             event.preventDefault();
-            var formData = new FormData($('#register')[0]);
-            var url='<?=Yii::$app->urlManager->createUrl(['dashboard/create'])?>'
-            $.ajax({
-                url: url,
-                type: "post",
-                data: formData,
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function (result) {
-                    var obj = JSON.parse(result);
-                    if (obj.flag === "S") {
-                        swal("Success", obj.msg, "success");
-                        window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
-                    }else{
-                        swal("Error", obj.msg, "Error");
-                    }
+            $('#register').validate({ // initialize the plugin
+                rules: {
+                    username: {
+                        required:true,
+                        remote:'<?=Yii::$app->urlManager->createUrl('site/checkunique?type=U')?>'
+                    },
+                    password: "required",
+                    age: "required",
+                    gender: "required",
+                    device: "required",
+                    email: "required",
+                    mobilenumber: "required"
+                },
+                messages: {
+                    username:{
+                        required:"Username cannot be blank",
+                        remote: "This Username is taken already"
+                    },
+                    password: "Password cannot be blank",
+                    age: "Age cannot be blank",
+                    gender: "Gender cannot be blank",
+                    device: "Device cannot be blank",
+                    email: "Email Address cannot be blank",
+                    mobilenumber: "Mobile Number cannot be blank"
+                },
+                onkeyup: true,
+                onblur: true,
+                submitHandler: function (form,event) { // for demo
+                    event.preventDefault();
+                    var formData = new FormData($('#register')[0]);
+                    var url='<?=Yii::$app->urlManager->createUrl(['dashboard/create'])?>'
+                    $.ajax({
+                        url: url,
+                        type: "post",
+                        data: formData,
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function (result) {
+                            var obj = JSON.parse(result);
+                            if (obj.flag === "S") {
+                                swal("Success", obj.msg, "success");
+                                window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
+                            }else{
+                                swal("Error", obj.msg, "Error");
+                            }
+                        }
+                    });
                 }
             });
-        }
+        });
+
     });
+
+    //$("#register").on("submit", function(event) {
+    //    event.preventDefault();
+    //}).validate({
+    //    rules: {
+    //        username: {
+    //            required:true,
+    //            uniqueUserName: true
+    //        },
+    //        password: "required",
+    //        age: "required",
+    //        gender: "required",
+    //        device: "required",
+    //        email: "required",
+    //        mobilenumber: "required"
+    //    },
+    //    messages: {
+    //        username:{
+    //            required:"Username cannot be blank",
+    //            uniqueUserName: "This Username is taken already"
+    //        },
+    //        passwrd: "Password cannot be blank",
+    //        age: "Age cannot be blank",
+    //        gender: "Gender cannot be blank",
+    //        device: "Device cannot be blank",
+    //        email: "Email Address cannot be blank",
+    //        mobilenumber: "Mobile Number cannot be blank"
+    //    },
+    //    onkeyup: false,
+    //    onblur: true,
+    //    submitHandler: function(form,event) {
+    //        event.preventDefault();
+    //        var formData = new FormData($('#register')[0]);
+    //        var url='<?//=Yii::$app->urlManager->createUrl(['dashboard/create'])?>//'
+    //        $.ajax({
+    //            url: url,
+    //            type: "post",
+    //            data: formData,
+    //            contentType: false,
+    //            cache: false,
+    //            processData: false,
+    //            success: function (result) {
+    //                var obj = JSON.parse(result);
+    //                if (obj.flag === "S") {
+    //                    swal("Success", obj.msg, "success");
+    //                    window.location.href="<?//=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>//"+obj.flag;
+    //                }else{
+    //                    swal("Error", obj.msg, "Error");
+    //                }
+    //            }
+    //        });
+    //    }
+    //});
 </script>
