@@ -22,6 +22,10 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                    <?php if($_SESSION['usertype'] =='A') { ?>
+                        <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/userlist')?>"><i class="fa fa-circle-o"></i>
+                                Manager Users</a></li>
+                    <?php } ?>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"><i class="fa fa-circle-o"></i>
                             Create User</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/engine')?>"><i class="fa fa-circle-o"></i>

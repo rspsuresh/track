@@ -122,14 +122,14 @@ class DashboardController extends \yii\web\Controller
         }
     }
     public function actionClouddelete(){
-                \Cloudinary::config(array(
+        \Cloudinary::config(array(
             'cloud_name' => 'project301220',
             'api_key' => '138435171694115',
             'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
         ));
         if(isset($_GET['id'])){
-                    $api = new \Cloudinary\Api();
-                   $api->delete_resources(['authorizedimage/'.$_GET['id']], $options = array());
+            $api = new \Cloudinary\Api();
+            $api->delete_resources(['authorizedimage/'.$_GET['id']], $options = array());
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Deleted Successfully" ];
         }
         return  json_encode($reTEngineArr);
@@ -177,7 +177,7 @@ class DashboardController extends \yii\web\Controller
                 $resultArray[$key]['name']=$publicId;
             }
         }
-    //    echo "<pre>";print_r($resultArray);die;
+        //    echo "<pre>";print_r($resultArray);die;
         return $this->render('resgrid',['resultarr'=>$resultArray]);
     }
 
@@ -201,14 +201,16 @@ class DashboardController extends \yii\web\Controller
     public function actionSendmail(){
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
-
-      //  $recipient = $UserModel->email;
+        //  $recipient = $UserModel->email;
         $recipient ='rsprampaul14321@gmail.com';
         $subject = 'Password Invite';
-        $message ="<b>Your Password is :</b>".$UserModel->password;
+        $message ="<p>Dear user ,</p>
+               <p>Your device is activated</p>
+               <p>Your user name : <b>$UserModel->email</b></p>
+               <p>Password : <b>$UserModel->password</b></p>";
         $sender = "From: rsprampaul14321@gmail.com";
         if(mail($recipient, $subject, $message, $sender)){
-            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully" ];
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
         }else{
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Error in mail send" ];
         }

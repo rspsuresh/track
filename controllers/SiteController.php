@@ -82,11 +82,9 @@ class SiteController extends Controller
              $UserReturn=TUser::loginCheck($_POST);
              return json_encode($UserReturn);
         }else{
-            //session_destroy();
             return $this->render('login');
         }
     }
-
     /**
      * Logout action.
      *
@@ -99,7 +97,6 @@ class SiteController extends Controller
         unset($_SESSION);
         return $this->redirect(['/site/home']);
     }
-
     /**
      * Displays contact page.
      *

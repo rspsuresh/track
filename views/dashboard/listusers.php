@@ -97,7 +97,9 @@
                                                onchange="statuschange('<?=$rowval['u_id']?>',event)">
                                         <span class="slider round"></span>
                                     </label>
-                                <button  onclick="sendmail('<?=$rowval['u_id']?>')" class="btn btn-info pull-right">Mail</button>
+                                <?php if($rowval['user_status'] =='A') { ?>
+                                    <button  onclick="sendmail('<?=$rowval['u_id']?>')" class="btn btn-info pull-right">Mail</button>
+                                <?php } ?>
                             </td>
                         </tr>
                     <?php } ?>
