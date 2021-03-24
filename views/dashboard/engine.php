@@ -39,7 +39,7 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by
         <div class="box-body">
             <div class="col-lg-5 card m-r-10 <?=($EngineModel->status =="ON" || empty($EngineModel))?'section-blur':''?>" >
                 <img class="card-img-top" height="324px"
-                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/lockationrequest.png"
+                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/on.jpeg"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title"> Engine on Request</h4>
@@ -50,8 +50,8 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by
                 </div>
             </div>
             <div class="col-lg-5 card m-r-10 <?=($EngineModel->status=='OFF' || empty($EngineModel))?'section-blur':''?>">
-                <img class="card-img-top"
-                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/reponse.jpg"
+                <img class="card-img-top" height="324px"
+                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/eff.jpeg"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title"> Engine off request</h4>
@@ -62,6 +62,8 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by
                 </div>
             </div>
         </div>
+    </div>
+</section>
 <script type="text/javascript">
     function OnOffrequest(url,status){
         $.ajax({

@@ -59,12 +59,20 @@
     .slider.round:before {
         border-radius: 50%;
     }
+    .float-rightwithclass {
+        float: right;
+        margin-right: 10px;
 </style>
 <div class="row">
     <div class="col-xs-12">
+
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">User List</h3>
+            </div>
+            <div class="float-rightwithclass">
+                <a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"   class="btn btn-primary">
+                Create User</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

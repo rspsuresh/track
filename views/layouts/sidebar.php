@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <?php
-            if(isset($_SESSION['userid'])){
+            if(isset($_SESSION) && isset($_SESSION['userid']) ){
                 $user=\app\models\TUser::findOne($_SESSION['userid']);
             }
             ?>

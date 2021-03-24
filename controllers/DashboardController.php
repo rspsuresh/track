@@ -151,20 +151,7 @@ class DashboardController extends \yii\web\Controller
         return  json_encode($reTEngineArr);
     }
     public function actionCloud(){
-//        \Cloudinary::config(array(
-//            'cloud_name' => 'project301220',
-//            'api_key' => '138435171694115',
-//            'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
-//        ));
-//        $api = new \Cloudinary\Api();
-//        $api->delete_resources(['authorizedimage/authorizedimage-893'], $options = array());
-
         $model=new AuthorizeImg();
-        //  $api = new \Cloudinary\Api();
-        //  $api->delete_resources(['authorizedimage/'], $options = array());
-
-        //$result = \Cloudinary\Uploader::destroy(540, $options = array());
-        // echo "<pre>";print_r($api);die;
         if(isset(\Yii::$app->request->isPost) && $_FILES){
             $file=UploadedFile::getInstance($model, 'picture');
             $publicId='authorizedimage-'.rand(1,1000);
@@ -217,23 +204,24 @@ class DashboardController extends \yii\web\Controller
     public function actionSendmail(){
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
-
-//        [23:02, 3/22/2021] Embedded Training & Projects: sritestai1@gmail.com
-//        [23:02, 3/22/2021] Embedded Training & Projects: TEST@test1
-        //  $recipient = $UserModel->email;
-		// $sender = "From: rsprampaul14321@gmail.com";
-		 $sender = "rsprampaul14321@gmail.com";
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-$headers .= 'From: '. $sender.' <'. $sender.'>' . "\r\n";
-        $recipient ='rsprampaul14321@gmail.com';
-        $subject = 'Password Invite';
-        $message ="<p>Dear user ,</p>
-               <p>Your device is activated</p>
-               <p>Your user name : <b>$UserModel->email</b></p>
-               <p>Password : <b>$UserModel->password</b></p>";
-       
-        if(mail($recipient, $subject, $message, $sender)){
+        $to = 'rsprampaul14321@gmail.com';
+        $subject = 'Marriage Proposal';
+        $from = 'sritestai1@gmail.com';
+// To send HTML mail, the Content-type header must be set
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Create email headers
+        $headers .= 'From: '.$from."\r\n".
+            'Reply-To: '.$from."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+// Compose a simple HTML email message
+        $message = '<html><body>';
+        $message .= '<p>Dear'.$UserModel->username.' ,</p>
+                     <p>Your device is activated</p>
+                      <p>Your user name : <b>'.$UserModel->email.'</b></p>
+               <p>Password : <b>'.$UserModel->password.'</b></p>';
+        $message .= '</body></html>';
+        if(mail($to, $subject, $message, $from)){
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
         }else{
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Error in mail send" ];
