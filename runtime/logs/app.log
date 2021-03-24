@@ -1,0 +1,1945 @@
+2021-03-19 18:25:13 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: _SESSION in F:\php7\htdocs\track\views\layouts\sidebar.php:25
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\sidebar.php(25): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 25, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(38): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(181): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-19 18:25:09 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '52500'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616174709.717
+    'REQUEST_TIME' => 1616174709
+]
+2021-03-20 05:00:54 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: _SESSION in F:\php7\htdocs\track\views\layouts\header.php:115
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(115): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 115, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(181): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-20 05:00:53 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '64987'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616212853.019
+    'REQUEST_TIME' => 1616212853
+]
+2021-03-20 05:01:09 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: _SESSION in F:\php7\htdocs\track\views\layouts\header.php:115
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(115): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 115, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(181): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-20 05:01:07 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '65001'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616212867.637
+    'REQUEST_TIME' => 1616212867
+]
+2021-03-20 06:07:55 [::1][-][612ehp5p1jmvja5blh76akufss][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/Error in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('Error', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/Error', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-20 06:07:55 [::1][-][612ehp5p1jmvja5blh76akufss][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => '612ehp5p1jmvja5blh76akufss'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/track/site/logout'
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=612ehp5p1jmvja5blh76akufss'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '55118'
+    'REDIRECT_URL' => '/track/dashboard/Error'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/Error'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616216874.989
+    'REQUEST_TIME' => 1616216874
+]
+2021-03-20 06:08:01 [::1][-][612ehp5p1jmvja5blh76akufss][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/Error in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('Error', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/Error', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-20 06:08:01 [::1][-][612ehp5p1jmvja5blh76akufss][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => '612ehp5p1jmvja5blh76akufss'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/track/site/logout'
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=612ehp5p1jmvja5blh76akufss'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '55124'
+    'REDIRECT_URL' => '/track/dashboard/Error'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/Error'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616216881.162
+    'REQUEST_TIME' => 1616216881
+]
+2021-03-20 06:09:33 [::1][-][612ehp5p1jmvja5blh76akufss][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/Error in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('Error', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/Error', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-20 06:09:33 [::1][-][612ehp5p1jmvja5blh76akufss][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => '612ehp5p1jmvja5blh76akufss'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/track/site/logout'
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=612ehp5p1jmvja5blh76akufss'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '55185'
+    'REDIRECT_URL' => '/track/dashboard/Error'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/Error'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616216973.482
+    'REQUEST_TIME' => 1616216973
+]
+2021-03-20 06:09:44 [::1][-][612ehp5p1jmvja5blh76akufss][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/Error in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('Error', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/Error', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-20 06:09:43 [::1][-][612ehp5p1jmvja5blh76akufss][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => '612ehp5p1jmvja5blh76akufss'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/track/site/logout'
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=612ehp5p1jmvja5blh76akufss'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '55196'
+    'REDIRECT_URL' => '/track/dashboard/Error'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/Error'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616216983.947
+    'REQUEST_TIME' => 1616216983
+]
+2021-03-23 04:55:17 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: user in F:\php7\htdocs\track\views\layouts\header.php:113
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(113): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 113, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(197): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-23 04:55:12 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '62937'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616471712.219
+    'REQUEST_TIME' => 1616471712
+]
+2021-03-23 04:55:17 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: user in F:\php7\htdocs\track\views\layouts\header.php:113
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(113): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 113, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(197): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-23 04:55:10 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '62933'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616471708.237
+    'REQUEST_TIME' => 1616471708
+]
+2021-03-23 10:29:36 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: user in F:\php7\htdocs\track\views\layouts\header.php:113
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(113): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 113, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(197): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-23 10:29:34 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49393'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616491773.981
+    'REQUEST_TIME' => 1616491773
+]
+2021-03-23 10:29:38 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: _SESSION in F:\php7\htdocs\track\views\dashboard\index.php:3
+Stack trace:
+#0 F:\php7\htdocs\track\views\dashboard\index.php(3): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 3, Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(410): yii\base\View->render('index', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\controllers\DashboardController.php(16): yii\base\Controller->render('index')
+#6 [internal function]: app\controllers\DashboardController->actionIndex()
+#7 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('index', Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/index', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#13 {main}
+2021-03-23 10:29:38 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49398'
+    'REDIRECT_URL' => '/track/dashboard/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/index'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616491778.481
+    'REQUEST_TIME' => 1616491778
+]
+2021-03-23 10:33:00 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/img_avatar1.png in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('img_avatar1.png', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/img_a...', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:32:59 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49499'
+    'REDIRECT_URL' => '/track/dashboard/img_avatar1.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/img_avatar1.png'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616491979.817
+    'REQUEST_TIME' => 1616491979
+]
+2021-03-23 10:33:59 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:33:59 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49530'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492039.621
+    'REQUEST_TIME' => 1616492039
+]
+2021-03-23 10:34:17 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:34:16 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49538'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492056.948
+    'REQUEST_TIME' => 1616492056
+]
+2021-03-23 10:35:12 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:35:12 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49541'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492111.972
+    'REQUEST_TIME' => 1616492111
+]
+2021-03-23 10:37:03 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:37:03 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49563'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492223.283
+    'REQUEST_TIME' => 1616492223
+]
+2021-03-23 10:38:03 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:38:03 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49577'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492283.434
+    'REQUEST_TIME' => 1616492283
+]
+2021-03-23 10:42:11 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "assets/default.jpg'". in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php:543
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('assets/default....', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 10:42:11 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '49609'
+    'REDIRECT_URL' => '/track/assets/default.jpg\''
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/assets/default.jpg\''
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616492531.456
+    'REQUEST_TIME' => 1616492531
+]
+2021-03-23 11:27:21 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/card.css in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('card.css', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/card....', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 11:27:21 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'style'
+    'HTTP_REFERER' => 'http://localhost/track/dashboard/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '50845'
+    'REDIRECT_URL' => '/track/dashboard/card.css'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/card.css'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616495241.61
+    'REQUEST_TIME' => 1616495241
+]
+2021-03-23 11:27:45 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/card.css in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('card.css', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/card....', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 11:27:45 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '50851'
+    'REDIRECT_URL' => '/track/dashboard/card.css'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/card.css'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616495265.011
+    'REQUEST_TIME' => 1616495265
+]
+2021-03-23 11:28:16 [::1][-][ql7orh1j3mej8qmieihr1nuug8][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: dashboard/card.css in F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php:152
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('card.css', Array)
+#1 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/card....', Array)
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#2 {main}
+2021-03-23 11:28:16 [::1][-][ql7orh1j3mej8qmieihr1nuug8][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PHPSESSID' => 'ql7orh1j3mej8qmieihr1nuug8'
+]
+
+$_SESSION = [
+    'username' => 'admin'
+    'userid' => '1'
+    'usertype' => 'A'
+    'channelapi' => 'WNDDFXWUZI1V09UW'
+    'channelid' => '712150'
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw; PHPSESSID=ql7orh1j3mej8qmieihr1nuug8'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '50860'
+    'REDIRECT_URL' => '/track/dashboard/card.css'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/card.css'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616495295.979
+    'REQUEST_TIME' => 1616495295
+]
+2021-03-24 06:45:55 [::1][-][-][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: user in F:\php7\htdocs\track\views\layouts\header.php:113
+Stack trace:
+#0 F:\php7\htdocs\track\views\layouts\header.php(113): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'F:\\php7\\htdocs\\...', 113, Array)
+#1 F:\php7\htdocs\track\views\layouts\main.php(35): require_once('F:\\php7\\htdocs\\...')
+#2 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(348): require('F:\\php7\\htdocs\\...')
+#3 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('F:\\php7\\htdocs\\...', Array)
+#4 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(425): yii\base\View->renderFile('F:\\php7\\htdocs\\...', Array, Object(app\controllers\DashboardController))
+#5 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(411): yii\base\Controller->renderContent('<link rel="styl...')
+#6 F:\php7\htdocs\track\controllers\DashboardController.php(197): yii\base\Controller->render('resgrid', Array)
+#7 [internal function]: app\controllers\DashboardController->actionReslist()
+#8 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Controller.php(181): yii\base\InlineAction->runWithParams(Array)
+#10 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Module.php(534): yii\base\Controller->runAction('reslist', Array)
+#11 F:\php7\htdocs\track\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('dashboard/resli...', Array)
+#12 F:\php7\htdocs\track\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 F:\php7\htdocs\track\index.php(12): yii\base\Application->run()
+#14 {main}
+2021-03-24 06:45:51 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '__gads' => 'ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'F:/php7/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'F:/php7/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8'
+    'HTTP_COOKIE' => '__gads=ID=7c2f1eff407ef2e2-2246407e0ac6002c:T=1613288198:RT=1613288198:S=ALNI_Mb7_CIraujQvE1jmql_pFtXjgAhTw'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Git\\cmd;F:\\php7\\php;C:\\Program Files (x86)\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Ruby30\\bin;C:\\Users\\ADMIN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ADMIN\\AppData\\Roaming\\Composer\\vendor\\bin;F:\\php7\\php;C:\\Users\\ADMIN\\AppData\\Roaming\\npm;C:\\Users\\ADMIN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files (x86)\\Sophos\\Sophos SSL VPN Client\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.RB;.RBW'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.34'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/php7/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'F:/php7/htdocs/track/index.php'
+    'REMOTE_PORT' => '51189'
+    'REDIRECT_URL' => '/track/dashboard/reslist'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/track/dashboard/reslist'
+    'SCRIPT_NAME' => '/track/index.php'
+    'PHP_SELF' => '/track/index.php'
+    'REQUEST_TIME_FLOAT' => 1616564749.65
+    'REQUEST_TIME' => 1616564749
+]

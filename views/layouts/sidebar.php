@@ -3,12 +3,18 @@
     <section class="sidebar">
         <!-- Sidebar user panel -->
         <div class="user-panel">
+            <?php
+            if(isset($_SESSION['userid'])){
+                $user=\app\models\TUser::findOne($_SESSION['userid']);
+            }
+            ?>
             <div class="pull-left image">
-                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img onerror="this.onerror=null;this.src='<?=Yii::$app->request->baseUrl?>/assets/default.jpg';"
+                     src="<?=Yii::$app->request->baseUrl?>/assets/uploads/<?=$user->user_profile?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <p><?=$_SESSION['username']?></p>
+                <a href="#">Role: <?=($_SESSION['usertype']=="A")?"Admin":"User"?></a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -22,12 +28,18 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <?php if($_SESSION['usertype'] =='A') { ?>
+                    <?php if(isset($_SESSION) && $_SESSION['usertype'] =='A') { ?>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/userlist')?>"><i class="fa fa-circle-o"></i>
                                 Manager Users</a></li>
+                        <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"><i class="fa fa-circle-o"></i>
+                                Create User</a></li>
+                        <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/cloud')?>"><i class="fa fa-circle-o"></i>
+                                Cloundinary</a></li>
+                        <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/reslist')?>"><i class="fa fa-circle-o"></i>
+                                Cloundinary Manage</a></li>
                     <?php } ?>
-                    <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"><i class="fa fa-circle-o"></i>
-                            Create User</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/index')?>"><i class="fa fa-circle-o"></i>
+                            Location Request</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/engine')?>"><i class="fa fa-circle-o"></i>
                             Engine On/Off</a></li>
                 </ul>

@@ -107,134 +107,53 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/jquery.validate.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>-->
 <script type="text/javascript">
-    $(document).ready(function(){
-        //var response;
-        //$.validator.addMethod(
-        //    "uniqueUserName",
-        //    function(value, element) {
-        //        $.ajax({
-        //            type: "POST",
-        //            url:'<?//=Yii::$app->urlManager->createUrl('site/checkunique?type=U')?>//',
-        //            data: "username="+value,
-        //            dataType:"html",
-        //            success: function(msg)
-        //            {
-        //                //If username exists, set response to true
-        //                response = ( msg == 'true' ) ? true : false;
-        //            }
-        //        });
-        //        return response;
-        //    },
-        //    "Username is Already Taken"
-        //);
-
-oot
-        $("#submit").click(function (event) {
+    $("#register").on("submit", function(event) {
+        event.preventDefault();
+    }).validate({
+        rules: {
+            username: {
+                required:true
+            },
+            password: "required",
+            age: "required",
+            gender: "required",
+            device: "required",
+            email: "required",
+            mobilenumber: "required"
+        },
+        messages: {
+            username:{
+                required:"Username cannot be blank",
+            },
+            passwrd: "Password cannot be blank",
+            age: "Age cannot be blank",
+            gender: "Gender cannot be blank",
+            device: "Device cannot be blank",
+            email: "Email Address cannot be blank",
+            mobilenumber: "Mobile Number cannot be blank"
+        },
+        submitHandler: function(form,event) {
             event.preventDefault();
-            $('#register').validate({ // initialize the plugin
-                rules: {
-                    username: {
-                        required:true,
-                        remote:'<?=Yii::$app->urlManager->createUrl('site/checkunique?type=U')?>'
-                    },
-                    password: "required",
-                    age: "required",
-                    gender: "required",
-                    device: "required",
-                    email: "required",
-                    mobilenumber: "required"
-                },
-                messages: {
-                    username:{
-                        required:"Username cannot be blank",
-                        remote: "This Username is taken already"
-                    },
-                    password: "Password cannot be blank",
-                    age: "Age cannot be blank",
-                    gender: "Gender cannot be blank",
-                    device: "Device cannot be blank",
-                    email: "Email Address cannot be blank",
-                    mobilenumber: "Mobile Number cannot be blank"
-                },
-                onkeyup: true,
-                onblur: true,
-                submitHandler: function (form,event) { // for demo
-                    event.preventDefault();
-                    var formData = new FormData($('#register')[0]);
-                    var url='<?=Yii::$app->urlManager->createUrl(['dashboard/create'])?>'
-                    $.ajax({
-                        url: url,
-                        type: "post",
-                        data: formData,
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        success: function (result) {
-                            var obj = JSON.parse(result);
-                            if (obj.flag === "S") {
-                                swal("Success", obj.msg, "success");
-                                window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
-                            }else{
-                                swal("Error", obj.msg, "Error");
-                            }
-                        }
-                    });
+            var formData = new FormData($('#register')[0]);
+            var url='<?=Yii::$app->urlManager->createUrl(['dashboard/create'])?>'
+            $.ajax({
+                url: url,
+                type: "post",
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (result) {
+                    var obj = JSON.parse(result);
+                    if (obj.flag === "S") {
+                        swal("Success", obj.msg, "success");
+                        window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
+                    }else{
+                        swal("Error", obj.msg, "error");
+                        $("#register")[0].reset();
+                    }
                 }
             });
-        });
-
+        }
     });
-
-    //$("#register").on("submit", function(event) {
-    //    event.preventDefault();
-    //}).validate({
-    //    rules: {
-    //        username: {
-    //            required:true,
-    //            uniqueUserName: true
-    //        },
-    //        password: "required",
-    //        age: "required",
-    //        gender: "required",
-    //        device: "required",
-    //        email: "required",
-    //        mobilenumber: "required"
-    //    },
-    //    messages: {
-    //        username:{
-    //            required:"Username cannot be blank",
-    //            uniqueUserName: "This Username is taken already"
-    //        },
-    //        passwrd: "Password cannot be blank",
-    //        age: "Age cannot be blank",
-    //        gender: "Gender cannot be blank",
-    //        device: "Device cannot be blank",
-    //        email: "Email Address cannot be blank",
-    //        mobilenumber: "Mobile Number cannot be blank"
-    //    },
-    //    onkeyup: false,
-    //    onblur: true,
-    //    submitHandler: function(form,event) {
-    //        event.preventDefault();
-    //        var formData = new FormData($('#register')[0]);
-    //        var url='<?//=Yii::$app->urlManager->createUrl(['dashboard/create'])?>//'
-    //        $.ajax({
-    //            url: url,
-    //            type: "post",
-    //            data: formData,
-    //            contentType: false,
-    //            cache: false,
-    //            processData: false,
-    //            success: function (result) {
-    //                var obj = JSON.parse(result);
-    //                if (obj.flag === "S") {
-    //                    swal("Success", obj.msg, "success");
-    //                    window.location.href="<?//=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>//"+obj.flag;
-    //                }else{
-    //                    swal("Error", obj.msg, "Error");
-    //                }
-    //            }
-    //        });
-    //    }
-    //});
 </script>

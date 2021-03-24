@@ -37,8 +37,24 @@ class DashboardController extends \yii\web\Controller
                 $msg='Updated Successfully';
             }else {
                 $UserModel = new User();
-                $msg='Updated Successfully';
+                $msg='Created Successfully';
+                $UsernameCheck=User::find()->where('username=:usrname',[':usrname'=>$_POST['username']])->one();
+                if(!empty($UsernameCheck)){
+                    $returnArr=['flag'=>'E','code'=>500,'msg'=>'Username already exists'];
+                    return  $returnArr;
+                }
+                $UsernameMail=User::find()->where('email=:email',[':email'=>$_POST['email']])->one();
+                if(!empty($UsernameMail)){
+                    $returnArr=['flag'=>'E','code'=>500,'msg'=>'Email already exists'];
+                    return  $returnArr;
+                }
+                $UsernameMobile=User::find()->where('mobile=:mobile',[':mobile'=>$_POST['mobilenumber']])->one();
+                if(!empty($UsernameMobile)){
+                    $returnArr=['flag'=>'E','code'=>500,'msg'=>'Mobile already exists'];
+                    return  $returnArr;
+                }
             }
+
             $UserModel->email=$data['email'];
             $UserModel->mobile=$data['mobilenumber'];
             $UserModel->username=$data['username'];
@@ -201,14 +217,22 @@ class DashboardController extends \yii\web\Controller
     public function actionSendmail(){
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
+
+//        [23:02, 3/22/2021] Embedded Training & Projects: sritestai1@gmail.com
+//        [23:02, 3/22/2021] Embedded Training & Projects: TEST@test1
         //  $recipient = $UserModel->email;
+		// $sender = "From: rsprampaul14321@gmail.com";
+		 $sender = "rsprampaul14321@gmail.com";
+		$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+$headers .= 'From: '. $sender.' <'. $sender.'>' . "\r\n";
         $recipient ='rsprampaul14321@gmail.com';
         $subject = 'Password Invite';
         $message ="<p>Dear user ,</p>
                <p>Your device is activated</p>
                <p>Your user name : <b>$UserModel->email</b></p>
                <p>Password : <b>$UserModel->password</b></p>";
-        $sender = "From: rsprampaul14321@gmail.com";
+       
         if(mail($recipient, $subject, $message, $sender)){
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
         }else{

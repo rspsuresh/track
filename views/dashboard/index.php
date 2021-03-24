@@ -5,10 +5,21 @@
   $locationRequest="https://api.thingspeak.com/update?api_key=".$channelapi."&field3=3";
   $locationRequestReceive="https://api.thingspeak.com/channels/".$channelid."/fields/3.json?results=1";
 ?>
+<link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/card.css">
 <style>
-    #map {
-        height: 400px;
-        width: 100%;
+    .section-blur {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        filter: blur(10px);
+        pointer-events: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 </style>
 <section class="content">
@@ -23,24 +34,30 @@
             </div>
         </div>
         <div class="box-body">
-            <div class="col-md-3 col-sm-6 col-xs-12" onclick="locationrequest('<?=$locationRequest?>')">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-location"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text" style="margin-top: 30px">Location Request</span>
-                    </div>
+            <div class="col-lg-5 card m-r-10" >
+                <img class="card-img-top" height="324px"
+                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/lockationrequest.png"
+                     alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Location Request</h4>
+                    <p class="card-text">Some example text some example text.
+                        John Doe is an architect and engineer</p>
+                    <a   onclick="locationrequest('<?=$locationRequest?>')" class="btn btn-primary">
+                        Send</a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-xs-12" id="receiverequest"
-                 onclick="locationrequestreceive('<?= $locationRequestReceive?>')">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-location-outline"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text" style="margin-top: 30px">Receive Response</span>
-                    </div>
+            <div class="col-lg-5 card m-r-10 section-blur" id="receiverequest">
+                <img class="card-img-top"
+                     src="<?=Yii::$app->request->baseUrl?>/dist/assets/reponse.jpg"
+                     alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Receive Response</h4>
+                    <p class="card-text">Some example text some example text.
+                        John Doe is an architect and engineer</p>
+                    <a   onclick="locationrequestreceive('<?= $locationRequestReceive?>')"
+                         class="btn btn-primary">Receive</a>
                 </div>
             </div>
-        </div>
     </div>
     <!-- /.box -->
     <div class="box" id="map" style="display: none">
@@ -52,11 +69,17 @@
 <script type="text/javascript">
     var lat='';
     var long='';
+    $("#receiverequest").css({
+        pointerEvents: 'none'
+    });
     function locationrequest(paramsurl){
         window.open(paramsurl, '_blank');
         swal("Success", "Successfully Requested", "success");
         setTimeout(()=>{
-            $("#receiverequest").show();
+            $("#receiverequest").css({
+                pointerEvents: 'auto'
+            });
+            $("#receiverequest").removeClass('section-blur');
         },500)
     }
     function locationrequestreceive(url){

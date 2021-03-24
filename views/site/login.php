@@ -39,7 +39,7 @@
 <body class="hold-transition login-page backgroundFortrack">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#0"><b>Tracking App</b></a>
+        <a href="#0"><b style="color: white !important;">Tracking App</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
