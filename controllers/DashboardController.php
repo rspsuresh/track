@@ -189,7 +189,6 @@ class DashboardController extends \yii\web\Controller
         return $this->render('listusers',['resultarr'=>$UserModel]);
     }
     public function actionChangestatus(){
-
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
         $UserModel->user_status=$UserModel->user_status=='A'?'I':'A';
@@ -205,8 +204,8 @@ class DashboardController extends \yii\web\Controller
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
         $to = 'rsprampaul14321@gmail.com';
-        $subject = 'Marriage Proposal';
-        $from = 'sritestai1@gmail.com';
+        $subject = 'Password Invite';
+        $from = 'peterparker@email.com';
 // To send HTML mail, the Content-type header must be set
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -214,18 +213,17 @@ class DashboardController extends \yii\web\Controller
         $headers .= 'From: '.$from."\r\n".
             'Reply-To: '.$from."\r\n" .
             'X-Mailer: PHP/' . phpversion();
-// Compose a simple HTML email message
-        $message = '<html><body>';
-        $message .= '<p>Dear'.$UserModel->username.' ,</p>
-                     <p>Your device is activated</p>
-                      <p>Your user name : <b>'.$UserModel->email.'</b></p>
-               <p>Password : <b>'.$UserModel->password.'</b></p>';
-        $message .= '</body></html>';
-        if(mail($to, $subject, $message, $from)){
+
+// Sending email
+        $message= $content=\Yii::$app->controller->renderPartial('passwordinvite',['usermodel'=>$UserModel],false,true);
+        if(mail($to, $subject, $message, $headers)){
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
-        }else{
-            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Error in mail send" ];
+        } else{
+            $reTEngineArr=['flag'=>'E','Code'=>200,'msg'=>"Error in mail send" ];
         }
         return  json_encode($reTEngineArr);
+    }
+    public function actionMapshow(){
+        return $this->render('map');
     }
 }

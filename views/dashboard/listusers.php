@@ -85,6 +85,8 @@
                         <th>Gender</th>
                         <th>Age</th>
                         <th>Device</th>
+                        <th>Engine on/off</th>
+                        <th>Location Request</th>
                         <th>Status</th>
                     </tr>
                     </tr>
@@ -98,6 +100,25 @@
                             <td><?=$rowval['gender']?></td>
                             <td><?=$rowval['age']?></td>
                             <td><?=$rowval['device']?></td>
+                            <td>
+                                <?php
+                                  $DeviceMaster=\app\models\DeviceMaster::findOne($rowval['device']);
+                                $channelapi=$DeviceMaster->channel_api;
+                                $channelid=$DeviceMaster->channel_id;
+                                $EngineOnReq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=1";
+                                $EngineOffREq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=0";
+                                $EngineModel=\app\models\EngineTracker::find()->where('created_by=:created_by',[':created_by'=>$rowval['u_id']])->one();
+                                ?>
+                                <label class="switch">
+                                    <input type="checkbox"
+                                        <?=(!isset($EngineModel->status) || $EngineModel->status=='OFF' || empty($EngineModel))?'checked':''?>
+                                           onchange="engineonoff(event,'<?=$rowval['device']?>')">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>
+                                jhkjhkjh
+                            </td>
                             <td>
                                     <label class="switch">
                                         <input type="checkbox"
@@ -156,9 +177,12 @@
                 if (obj.flag === "S") {
                     swal("Success", obj.msg, "success");
                 }else{
-                    swal("Error", obj.msg, "Error");
+                    swal("Error", obj.msg, "error");
                 }
             }
         });
+    }
+    function engineonoff(event,device){
+
     }
 </script>

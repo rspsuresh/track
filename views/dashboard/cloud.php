@@ -26,6 +26,7 @@
         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     }
 </style>
+<link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/card.css">
 <div class="container">
     <img src="https://res.cloudinary.com/cloudinary/image/upload/c_scale,w_200/v1/logo/for_white_bg/cloudinary_vertical_logo_for_white_bg.png">
     <h1>CloudyUpload</h1>

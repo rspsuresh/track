@@ -60,9 +60,6 @@
             </div>
     </div>
     <!-- /.box -->
-    <div class="box" id="map" style="display: none">
-
-    </div>
 </section>
 <!-- /.content -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -73,15 +70,20 @@
         pointerEvents: 'none'
     });
     function locationrequest(paramsurl){
-        window.open(paramsurl, '_blank');
-        swal("Success", "Successfully Requested", "success");
-        setTimeout(()=>{
-            $("#receiverequest").css({
-                pointerEvents: 'auto'
-            });
-            $("#receiverequest").removeClass('section-blur');
-        },500)
-    }
+        $.ajax({
+            url: paramsurl,
+            type: "get",
+            success: function (result) {
+                swal("Success", "Successfully Requested", "success");
+                setTimeout(()=>{
+                    $("#receiverequest").css({
+                        pointerEvents: 'auto'
+                    });
+                    $("#receiverequest").removeClass('section-blur');
+                },500)
+            }
+        })
+        }
     function locationrequestreceive(url){
         $.ajax({
             url: '<?=Yii::$app->urlManager->createUrl('dashboard/savetracker')?>?requesturl='+url,
@@ -89,21 +91,25 @@
             success: function (result) {
                 var channelArr=Object.values(result);
                 let ltln=channelArr[1][0].field3;
-                if (obj.flag === "S" ) {
-                    swal("Success", obj.msg, "success");
-                    if(ltln.input(',')){
-                        $("#map").show();
-                        let seprateLtLN=ltln.split(',');
-                        lat=seprateLtLN[0];
-                        long=seprateLtLN[1];
-                        console.log(lat,long,'sdfdsfsdfds')
-                        $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB6jDIrWc2mVd0jqBCgJA4R0VfcM7SEJ7Q&callback=initMap&libraries=&v=weekly", function() {
-                        });
-                    }
+                console.log(result);
+                window.open('<?=Yii::$app->urlManager->createUrl('dashboard/mapshow')?>?lat=13&lng=80', '_blank');
 
-                }else{
-                    swal("Error", obj.msg, "Error");
-                }
+                // if (obj.flag === "S" ) {
+                //     swal("Success", obj.msg, "success");
+                //     if(ltln.input(',')){
+                //         $("#map").show();
+                //         let seprateLtLN=ltln.split(',');
+                //         lat=seprateLtLN[0];
+                //         long=seprateLtLN[1];
+                //         console.log(lat,long,'sdfdsfsdfds')
+                //         $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB6jDIrWc2mVd0jqBCgJA4R0VfcM7SEJ7Q&callback=initMap&libraries=&v=weekly", function() {
+                //         });
+                //     }
+                //
+                // }else{
+                //     swal("Error", obj.msg, "Error");
+                // }
+                location.reload();
             }
         });
     }

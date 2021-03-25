@@ -13,7 +13,7 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
 ?>
 <section class="content">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">

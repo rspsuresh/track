@@ -19,29 +19,31 @@
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="treeview">
+            <li class="treeview menu-open">
                 <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                <ul class="treeview-menu menu-open" style="display: block;">
+
                     <?php if(isset($_SESSION) && $_SESSION['usertype'] =='A') { ?>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/userlist')?>"><i class="fa fa-circle-o"></i>
                                 Manager Users</a></li>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/create')?>"><i class="fa fa-circle-o"></i>
                                 Create User</a></li>
+                    <?php } else { ?>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/cloud')?>"><i class="fa fa-circle-o"></i>
-                                Cloundinary</a></li>
+                                Upload authorization</a></li>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/reslist')?>"><i class="fa fa-circle-o"></i>
-                                Cloundinary Manage</a></li>
-                    <?php } ?>
+                                Activity log</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/index')?>"><i class="fa fa-circle-o"></i>
                             Location Request</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/engine')?>"><i class="fa fa-circle-o"></i>
                             Engine On/Off</a></li>
+
+                    <?php } ?>
                 </ul>
             </li>
         </ul>
