@@ -109,7 +109,7 @@
                 // }else{
                 //     swal("Error", obj.msg, "Error");
                 // }
-                location.reload();
+                //location.reload();
             }
         });
     }

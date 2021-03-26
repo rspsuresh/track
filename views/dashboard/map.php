@@ -1,4 +1,5 @@
 <section class="content">
+    <a href="#" id="directionMap" target="_blank" style="display:none">open in gmap</a>
     <div class="row" >
         <div id="map">
 
@@ -28,5 +29,16 @@
             map,
             title: "Location Picker",
         });
+        let urladdress='https://maps.googleapis.com/maps/api/geocode/json?latlng=13,80&key=AIzaSyB6jDIrWc2mVd0jqBCgJA4R0VfcM7SEJ7Q';
+        $.ajax({
+            url: urladdress,
+            type: "get",
+            success: function (result) {
+              console.log(result.results[0].formatted_address,'tsttttttttttttt');
+              let pasteUrl='https://www.google.com/maps/dir/'+result.results[0].formatted_address;
+              $("#directionMap").attr('href',pasteUrl);
+                $("#directionMap").show();
+            }
+        })
     }
 </script>
