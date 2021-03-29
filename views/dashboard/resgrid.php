@@ -11,8 +11,8 @@
                     <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>Resource Link</th>
                         <th>Resource Type</th>
+                        <th>Resource Link</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -20,8 +20,13 @@
                    <?php foreach ($resultarr as $key =>$rowval) { ?>
                      <tr>
                        <td><?=$key+1?></td>
-                       <td><img class="img-circle" width="100" height="100"  src="<?=$rowval['url']?>" onclick="window.open('<?=$rowval['url']?>')" target="_blank"></a></td>
                        <td><?=$rowval['type']?></td>
+                         <td>
+                             <button data-src="<?=$rowval['url']?>" data-toggle="modal" data-target="#exampleModal"
+                                     class="btn btn-info"
+                                     onclick="setimageSrc(this)"><i class="fa fa-eye" aria-hidden="true"></i>
+                                  View</button>
+                         </td>
                        <td>
                            <?php
                            if(!empty($rowval['name'][1])) { ?>
@@ -39,6 +44,23 @@
     </div>
     <!-- /.col -->
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">View Image</h5>
+            </div>
+            <div class="modal-body">
+                <img id="popupsrc"  width="100%" height="200" src="<?=Yii::$app->request->baseUrl?>/assets/default.jpg">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/jquery.dataTables.min.js"></script>
 <script src="<?=\Yii::getAlias('@web');?>/dist/assets/dataTables.bootstrap.min.js"></script>
 <script>
@@ -68,5 +90,10 @@
                }
            });
        }
+    }
+
+    function setimageSrc(a){
+        //console.log($(a).attr('data-src'))
+        $("#popupsrc").attr('src',$(a).attr('data-src'))
     }
 </script>
