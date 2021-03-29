@@ -17,32 +17,6 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function actions()
     {
         return [
@@ -73,6 +47,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+
         Yii::$app->controller->enableCsrfValidation = false;
         $this->layout=false;
         if (!Yii::$app->user->isGuest) {
@@ -82,6 +57,7 @@ class SiteController extends Controller
              $UserReturn=TUser::loginCheck($_POST);
              return json_encode($UserReturn);
         }else{
+
             return $this->render('login');
         }
     }
@@ -92,10 +68,9 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
-        session_destroy();
-        unset($_SESSION);
-        return $this->redirect(['/site/home']);
+        Yii::$app->getSession()->destroy();
+         Yii::$app->user->logout();
+        return $this->redirect(['/site/login']);
     }
     /**
      * Displays contact page.

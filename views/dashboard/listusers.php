@@ -182,7 +182,4 @@
             }
         });
     }
-    function engineonoff(event,device){
-
-    }
 </script>

@@ -22,6 +22,7 @@
         user-select: none;
     }
 </style>
+<title>Tracking Management</title>
 <section class="content">
     <!-- Default box -->
     <div class="box">
@@ -39,11 +40,10 @@
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/lockationrequest.png"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">Location Request</h4>
-                    <p class="card-text">Some example text some example text.
-                        John Doe is an architect and engineer</p>
+                    <h4 class="card-title">Track Vehicle Location</h4>
+                    <p class="card-text">Now you have access to the live location of your vehicles.Know it by clicking </p>
                     <a   onclick="locationrequest('<?=$locationRequest?>')" class="btn btn-primary">
-                        Send</a>
+                        Track Vehicle</a>
                 </div>
             </div>
             <div class="col-lg-5 card m-r-10 section-blur" id="receiverequest">
@@ -51,11 +51,10 @@
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/reponse.jpg"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title">Receive Response</h4>
-                    <p class="card-text">Some example text some example text.
-                        John Doe is an architect and engineer</p>
+                    <h4 class="card-title">Direction locator</h4>
+                    <p class="card-text">We are here to guide you and help you reach your destination.Click on Route Map to know the directions!</p>
                     <a   onclick="locationrequestreceive('<?= $locationRequestReceive?>')"
-                         class="btn btn-primary">Receive</a>
+                         class="btn btn-primary">Route Map</a>
                 </div>
             </div>
     </div>
@@ -89,9 +88,11 @@
             url: '<?=Yii::$app->urlManager->createUrl('dashboard/savetracker')?>?requesturl='+url,
             type: "get",
             success: function (result) {
-                var channelArr=Object.values(result);
-                let ltln=channelArr[1][0].field3;
-                console.log(result);
+                let parSECDE=JSON.parse(result);
+                console.log(parSECDE);
+                let firstLevel=JSON.parse(parSECDE.data);
+                let secondLevel=JSON.parse(firstLevel);
+                console.log(secondLevel.feeds[0].field3)
                 window.open('<?=Yii::$app->urlManager->createUrl('dashboard/mapshow')?>?lat=13&lng=80', '_blank');
 
                 // if (obj.flag === "S" ) {

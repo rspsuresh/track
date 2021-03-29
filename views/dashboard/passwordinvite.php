@@ -11,9 +11,9 @@
                     <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                         <td class="" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 3px 3px 0 0; background-color: #38414a; margin: 0; padding: 20px;"
                             align="center" bgcolor="#71b6f9" valign="top">
-                            <a href="#" style="font-size:32px;color:#fff;">Smart Tracking</a> <br>
+                            <a href="#" style="font-size:32px;color:#fff;">AI Smart Tracking</a> <br>
                             <span style="margin-top: 10px;display: block;">
-                                Password Invite
+                                AI - Password Invite
                             </span>
                         </td>
                     </tr>
@@ -23,12 +23,12 @@
                                 <tbody>
                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                     <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                      Dear <?=$usermodel->username?> ,
+                                      Hi <?=$usermodel->username?> !
                                     </td>
                                 </tr>
                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                     <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                        Your device is activated
+                                        It's great to have you on board.As a valued customer,you will be able to access the device using the below credentials:
                                     </td>
                                 </tr>
                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
@@ -50,7 +50,10 @@
                                 </tr>
                                 <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                                     <td class="content-block" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; margin: 0; padding: 0 0 20px;" valign="top">
-                                        Thanks from polean tech
+                                        Access your device and have a great experience!
+                                        For any queries,
+                                        please contact "---".
+                                        We will be happy to help you.
                                     </td>
                                 </tr>
                                 </tbody>

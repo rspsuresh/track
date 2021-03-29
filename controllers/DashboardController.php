@@ -11,6 +11,15 @@ use yii\web\UploadedFile;
 
 class DashboardController extends \yii\web\Controller
 {
+    public function beforeAction($action)
+    {
+        if (!isset($_SESSION['username']) && !\Yii::$app->request->isAjax) {
+            \Yii::$app->getResponse()->redirect(\Yii::$app->getUser()->loginUrl);
+        }else{
+            return parent::beforeAction($action);
+        }
+
+    }
     public function actionIndex()
     {
         return $this->render('index');
@@ -22,7 +31,7 @@ class DashboardController extends \yii\web\Controller
         }else{
             $User=new User();
             if(isset($_GET['id'])){
-                $userid=intval($_GET['id']);
+                $userid=intval(base64_decode($_GET['id']));
                 $User=User::findOne($userid);
             }
             return $this->render('create',['user'=>$User]);
@@ -204,7 +213,7 @@ class DashboardController extends \yii\web\Controller
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
         $to = 'rsprampaul14321@gmail.com';
-        $subject = 'Password Invite';
+        $subject = 'AI Smart Tracking - Password Invite';
         $from = 'peterparker@email.com';
 // To send HTML mail, the Content-type header must be set
         $headers  = 'MIME-Version: 1.0' . "\r\n";

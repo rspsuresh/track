@@ -5,7 +5,9 @@ $channelapi=$_SESSION['channelapi'];
 $channelid=$_SESSION['channelid'];
 $EngineOnReq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=1";
 $EngineOffREq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=0";
-$EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by'=>$_SESSION['userid']])->one();
+$EngineModel=EngineTracker::find()->where('created_by=:created_by',
+    [':created_by'=>$_SESSION['userid']])->one();
+//echo "<pre>";print_r($EngineModel);die;
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/card.css">
@@ -25,6 +27,7 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by
         user-select: none;
     }
 </style>
+<title>Vehicle Control Management</title>
 <section class="content">
     <!-- Default box -->
     <div class="box">
@@ -37,28 +40,28 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',[':created_by
             </div>
         </div>
         <div class="box-body">
-            <div class="col-lg-5 card m-r-10 <?=($EngineModel->status =="ON" || empty($EngineModel))?'section-blur':''?>" >
+            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) || $EngineModel->status =="ON")?'section-blur':''?>" >
                 <img class="card-img-top" height="324px"
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/on.jpeg"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title"> Engine on Request</h4>
-                    <p class="card-text">Some example text some example text.
-                        John Doe is an architect and engineer</p>
+                    <h4 class="card-title">Vehicle Kick start</h4>
+                    <p class="card-text">Someone wants to start your vehicle !!
+                        Please click on START if you want approve the request.
+                        Leave it in STOP mode if you don't want to approve.</p>
                     <a   onclick="OnOffrequest('<?=$EngineOnReq?>','1')" class="btn btn-primary">
-                        Engine on</a>
+                        Start</a>
                 </div>
             </div>
-            <div class="col-lg-5 card m-r-10 <?=($EngineModel->status=='OFF' || empty($EngineModel))?'section-blur':''?>">
+            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) && $EngineModel->status=='OFF')?'section-blur':''?>">
                 <img class="card-img-top" height="324px"
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/eff.jpeg"
                      alt="Card image" style="width:100%">
                 <div class="card-body">
-                    <h4 class="card-title"> Engine off request</h4>
-                    <p class="card-text">Some example text some example text.
-                        John Doe is an architect and engineer</p>
+                    <h4 class="card-title">Vehicle Kick off </h4>
+                    <p class="card-text">If you're not going to use your car and protect its usage from strangers,,please Click on STOP</p>
                     <a   onclick="OnOffrequest('<?= $EngineOffREq?>','0')"
-                         class="btn btn-primary">Engine Off</a>
+                         class="btn btn-primary">Stop</a>
                 </div>
             </div>
         </div>

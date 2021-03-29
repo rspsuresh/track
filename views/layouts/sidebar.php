@@ -35,7 +35,7 @@
                                 Create User</a></li>
                     <?php } else { ?>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/cloud')?>"><i class="fa fa-circle-o"></i>
-                                Upload authorization</a></li>
+                            authorization</a></li>
                         <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/reslist')?>"><i class="fa fa-circle-o"></i>
                                 Activity log</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl('dashboard/index')?>"><i class="fa fa-circle-o"></i>

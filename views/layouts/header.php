@@ -128,10 +128,12 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a  href="<?=Yii::$app->urlManager->createAbsoluteUrl(['dashboard/create',
+                                    'id'=>base64_encode($_SESSION['userid'])])?>" class="btn btn-default btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                                <a href="<?=Yii::$app->urlManager->createUrl(['site/logout'])?>" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="<?=Yii::$app->urlManager->createAbsoluteUrl(['site/logout'])?>"
+                                   class="btn btn-default btn-flat">Sign out</a>
                             </div>
                         </li>
                     </ul>

@@ -1,5 +1,6 @@
 <section class="content">
-    <a href="#" id="directionMap" target="_blank" style="display:none">open in gmap</a>
+    <a href="#" class="btn btn-primary " id="directionMap" target="_blank"
+       style="display:none;float:right;margin-bottom: 10px ">open in gmap</a>
     <div class="row" >
         <div id="map">
 

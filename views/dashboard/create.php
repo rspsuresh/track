@@ -96,7 +96,7 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                     <!-- /.box-body -->
                     <div class="box-footer">
                         <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" id="submit" class="btn btn-info pull-right">Sign in</button>
+                        <button type="submit" id="submit" class="btn btn-info pull-right"><?=$LabelCheck?></button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
@@ -147,7 +147,12 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                     var obj = JSON.parse(result);
                     if (obj.flag === "S") {
                         swal("Success", obj.msg, "success");
+                        <?php if($_SESSION['usertype'] =='A') { ?>
+                        window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/userlist?flag='])?>"+obj.flag;
+                        <?php } else { ?>
                         window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
+                        <?php } ?>
+
                     }else{
                         swal("Error", obj.msg, "error");
                         $("#register")[0].reset();
