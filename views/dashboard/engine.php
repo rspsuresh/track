@@ -6,7 +6,7 @@ $channelid=$_SESSION['channelid'];
 $EngineOnReq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=1";
 $EngineOffREq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=0";
 $EngineModel=EngineTracker::find()->where('created_by=:created_by',
-    [':created_by'=>$_SESSION['userid']])->one();
+    [':created_by'=>$_SESSION['userid']])->asArray()->one();
 
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,7 +40,7 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',
             </div>
         </div>
         <div class="box-body">
-            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) || $EngineModel->status =="ON")?'section-blur':''?>" >
+            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) || $EngineModel['status'] =="ON")?'section-blur':''?>" >
                 <img class="card-img-top" height="324px"
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/on.jpeg"
                      alt="Card image" style="width:100%">
@@ -53,7 +53,7 @@ $EngineModel=EngineTracker::find()->where('created_by=:created_by',
                         Start</a>
                 </div>
             </div>
-            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) && $EngineModel->status=='OFF')?'section-blur':''?>">
+            <div class="col-lg-5 card m-r-10 <?=(!empty($EngineModel) && $EngineModel['status']=='OFF')?'section-blur':''?>">
                 <img class="card-img-top" height="324px"
                      src="<?=Yii::$app->request->baseUrl?>/dist/assets/eff.jpeg"
                      alt="Card image" style="width:100%">

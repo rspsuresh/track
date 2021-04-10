@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/dataTables.bootstrap.min.css">
+<title>AI-Activity Log</title>
 <div class="row">
     <div class="col-xs-12">
         <div class="box">

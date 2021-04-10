@@ -70,8 +70,9 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                             <label for="inputEmail3" class="col-sm-2 control-label">Device</label>
                             <div class="col-sm-10">
                                 <select  name="device" id="device" class="form-control" required>
-                                    <option value="1">one</option>
-                                    <option value="1">two</option>
+                                  <?php foreach ($device as $key =>$val) { ?>
+                                    <option value='<?=$val['id']?>'><?=$val['channel_id'].'-'.$val['channel_api']?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>

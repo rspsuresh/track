@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Authimg;
 use app\models\AuthorizeImg;
+use app\models\DeviceMaster;
 use app\models\EngineTracker;
 use app\models\LockerTracker;
 use app\models\ResponseTracker;
@@ -24,19 +25,26 @@ class DashboardController extends \yii\web\Controller
     }
     public function actionIndex()
     {
-        return $this->render('index');
+       // echo "<pre>";print_r($_SESSION);die;
+        if($_SESSION['usertype'] =="A") {
+            return $this->render('resgrid');
+        }else{
+            return $this->render('index');
+        }
+
     }
     public function actionCreate(){
         if(\Yii::$app->request->isAjax && !empty($_POST)){
             $user=$this->saveandupdate($_POST);
             return json_encode($user);
         }else{
+            $deviceMst=DeviceMaster::find()->where('channel_status="A"')->asArray()->all();
             $User=new User();
             if(isset($_GET['id'])){
                 $userid=intval(base64_decode($_GET['id']));
                 $User=User::findOne($userid);
             }
-            return $this->render('create',['user'=>$User]);
+            return $this->render('create',['user'=>$User,'device'=>$deviceMst]);
         }
 
     }
@@ -75,6 +83,7 @@ class DashboardController extends \yii\web\Controller
             $UserModel->address=$data['address'];
             if($UserModel->isNewRecord){
                 $UserModel->user_type="U";
+                $UserModel->user_status="I";
             }
             $UserModel->password=$data['password'];
             $UserModel->user_createdat=date('Y-m-d H:i:s');
@@ -227,6 +236,7 @@ class DashboardController extends \yii\web\Controller
         return  json_encode($reTEngineArr);
     }
     public function actionMapshow(){
+
         return $this->render('map');
     }
 

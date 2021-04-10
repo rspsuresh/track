@@ -82,8 +82,8 @@
                         <th>S.No</th>
                         <th>Mobile</th>
                         <th>Email</th>
-                        <th>Gender</th>
-                        <th>Age</th>
+<!--                        <th>Gender</th>-->
+<!--                        <th>Age</th>-->
                         <th>Device</th>
                         <th>Engine on/off</th>
                         <th>Location Request</th>
@@ -97,9 +97,9 @@
                             <td><?=$key+1?></td>
                             <td><?=$rowval['mobile']?></td>
                             <td><?=$rowval['email']?></td>
-                            <td><?=$rowval['gender']?></td>
-                            <td><?=$rowval['age']?></td>
-                            <td><?=$rowval['device']?></td>
+<!--                            <td>--><?//=$rowval['gender']?><!--</td>-->
+<!--                            <td>--><?//=$rowval['age']?><!--</td>-->
+                            <td><?=$rowval['channel_api']?></td>
                             <td>
                                 <?php if($rowval['user_status'] =="A") { ?>
                                     <?php
@@ -125,8 +125,7 @@
                                                 data-color="red" class="btn bg-red waves-effect">Engine Off</button>
                                     <?php } ?>
                                 <?php }  else { ?>
-                                    <button type="button" disabled
-                                            data-color="cyan" class="btn  bg-red  waves-effect">Inactive</button>
+                                   -
                                 <?php } ?>
 
                             </td>

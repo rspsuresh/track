@@ -1,3 +1,4 @@
+<title>AI-Map</title>
 <section class="content">
     <a href="#" class="btn btn-primary " id="directionMap" target="_blank"
        style="display:none;float:right;margin-bottom: 10px ">open in gmap</a>
