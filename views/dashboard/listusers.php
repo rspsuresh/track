@@ -101,20 +101,34 @@
                             <td><?=$rowval['age']?></td>
                             <td><?=$rowval['device']?></td>
                             <td>
-                                <?php
-                                  $DeviceMaster=\app\models\DeviceMaster::findOne($rowval['device']);
-                                $channelapi=$DeviceMaster->channel_api;
-                                $channelid=$DeviceMaster->channel_id;
-                                $EngineOnReq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=1";
-                                $EngineOffREq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=0";
-                                $EngineModel=\app\models\EngineTracker::find()->where('created_by=:created_by',[':created_by'=>$rowval['u_id']])->one();
-                                ?>
-                                <label class="switch">
-                                    <input type="checkbox"
-                                        <?=(!isset($EngineModel->status) || $EngineModel->status=='OFF' || empty($EngineModel))?'checked':''?>
-                                           onchange="engineonoff(event,'<?=$rowval['device']?>')">
-                                    <span class="slider round"></span>
-                                </label>
+                                <?php if($rowval['user_status'] =="A") { ?>
+                                    <?php
+                                    $engineModel=\app\models\EngineTracker::find()
+                                        ->where('created_by=:by and device_id=:device',
+                                            [':by'=>$rowval['u_id'],
+                                                ':device'=>$rowval['device']])->one();?>
+                                    <?php if(empty($engineModel) || $engineModel->status=='OFF') { ?>
+                                        <button type="button"
+                                                onclick="locktrack('<?=base64_encode($rowval['u_id'])?>',
+                                                        '<?=base64_encode($rowval['device'])?>','ON',
+                                                        '<?=$rowval['channel_api']?>')"
+                                                data-color="cyan" class="btn bg-primary waves-effect">Engine On</button>
+                                        <button type="button" disabled
+                                                data-color="red" class="btn bg-red waves-effect">Engine Off</button>
+                                    <?php } else { ?>
+                                        <button type="button" disabled
+                                                data-color="cyan" class="btn btn bg-primary waves-effect">Engine On</button>
+                                        <button type="button"
+                                                onclick="locktrack('<?=base64_encode($rowval['u_id'])?>',
+                                                        '<?=base64_encode($rowval['device'])?>','OFF',
+                                                        '<?=$rowval['channel_api']?>')"
+                                                data-color="red" class="btn bg-red waves-effect">Engine Off</button>
+                                    <?php } ?>
+                                <?php }  else { ?>
+                                    <button type="button" disabled
+                                            data-color="cyan" class="btn  bg-red  waves-effect">Inactive</button>
+                                <?php } ?>
+
                             </td>
                             <td>
                                 jhkjhkjh
@@ -181,5 +195,25 @@
                 }
             }
         });
+    }
+    function locktrack(user,device,status,channel){
+        $.ajax({
+            type: 'GET',
+            url: '<?=Yii::$app->urlManager->createUrl('dashboard/enginetracker')?>?user='+user+'&device='+device,
+            success:function(data) {
+                var obj = JSON.parse(data);
+                if (obj.flag === "S") {
+                    swal("Success", obj.msg, "success");
+                } else {
+                    swal("Error", obj.msg, "Error");
+                }
+
+                let extraquestr=status =="ON"?'field2=1':'field2=0'
+                let url =`https://api.thingspeak.com/update?api_key=${channel}&${extraquestr}`;
+                var myWindow =window.open(url, "myWindow", "width=200,height=100");
+                myWindow.close();
+                location.reload();
+            }
+        })
     }
 </script>

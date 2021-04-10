@@ -10,9 +10,9 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>S.No</th>
-                        <th>Resource Type</th>
-                        <th>Resource Link</th>
+                        <th>S.no</th>
+                        <th>App Name</th>
+                        <th>Public Id</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -20,19 +20,18 @@
                    <?php foreach ($resultarr as $key =>$rowval) { ?>
                      <tr>
                        <td><?=$key+1?></td>
-                       <td><?=$rowval['type']?></td>
+                         <td>Tracker</td>
+                         <td><?=$rowval->auth_img?></td>
                          <td>
-                             <button data-src="<?=$rowval['url']?>" data-toggle="modal" data-target="#exampleModal"
-                                     class="btn btn-info"
-                                     onclick="setimageSrc(this)"><i class="fa fa-eye" aria-hidden="true"></i>
-                                  View</button>
+                             <button onclick="setimageSrc(this)"
+                                     data-src="<?=$rowval->img_url?>"
+                                     class="btn btn-primary"
+                                     data-toggle="modal"
+                                     data-target="#exampleModal">View</button>
+                             <button class="btn btn-danger"
+                                     onclick="deleteclodinary('<?=$rowval->public_id?>')">
+                                 Delete</button>
                          </td>
-                       <td>
-                           <?php
-                           if(!empty($rowval['name'][1])) { ?>
-                           <a onclick="deleteclodinary('<?=$rowval['name'][1]?>')">Delete</a>
-                           <?php } ?>
-                       </td>
                      </tr>
                    <?php } ?>
                     </tbody>
@@ -75,21 +74,21 @@
         })
     })
     function deleteclodinary(ref){
-       if(confirm('Are You Sure want to delete?')){
-           $.ajax({
-               url: '<?=Yii::$app->urlManager->createUrl('dashboard/clouddelete')?>?id='+ref,
-               type: "get",
-               success: function (result) {
-                   var obj = JSON.parse(result);
-                   if (obj.flag === "S") {
-                       swal("Success", obj.msg, "success");
-                   }else{
-                       swal("Error", obj.msg, "Error");
-                   }
-                   window.location.reload();
-               }
-           });
-       }
+        if(confirm('Are You Sure want to delete?')){
+            $.ajax({
+                url: '<?=Yii::$app->urlManager->createUrl('dashboard/clouddeletetrack')?>?id='+ref,
+                type: "get",
+                success: function (result) {
+                    var obj = JSON.parse(result);
+                    if (obj.flag === "S") {
+                        swal("Success", obj.msg, "success");
+                    }else{
+                        swal("Error", obj.msg, "Error");
+                    }
+                    window.location.reload();
+                }
+            });
+        }
     }
 
     function setimageSrc(a){

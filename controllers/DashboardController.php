@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\Authimg;
 use app\models\AuthorizeImg;
 use app\models\EngineTracker;
+use app\models\LockerTracker;
 use app\models\ResponseTracker;
 use app\models\TUser;
 use app\models\User;
@@ -71,8 +73,9 @@ class DashboardController extends \yii\web\Controller
             $UserModel->gender=$data['gender'];
             $UserModel->device=$data['device'];
             $UserModel->address=$data['address'];
-            $UserModel->user_status="A";
-            $UserModel->user_type="U";
+            if($UserModel->isNewRecord){
+                $UserModel->user_type="U";
+            }
             $UserModel->password=$data['password'];
             $UserModel->user_createdat=date('Y-m-d H:i:s');
             if(isset($_FILES)){
@@ -146,55 +149,46 @@ class DashboardController extends \yii\web\Controller
             return $this->render('engine');
         }
     }
-    public function actionClouddelete(){
+    public function actionCloud(){
+        return $this->render('cloud');
+    }
+    public function actionTrackupload(){
         \Cloudinary::config(array(
             'cloud_name' => 'project301220',
             'api_key' => '138435171694115',
             'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
         ));
-        if(isset($_GET['id'])){
-            $api = new \Cloudinary\Api();
-            $api->delete_resources(['authorizedimage/'.$_GET['id']], $options = array());
-            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Deleted Successfully" ];
-        }
-        return  json_encode($reTEngineArr);
-    }
-    public function actionCloud(){
-        $model=new AuthorizeImg();
         if(isset(\Yii::$app->request->isPost) && $_FILES){
-            $file=UploadedFile::getInstance($model, 'picture');
-            $publicId='authorizedimage-'.rand(1,1000);
-            $AuthModel=new  \app\models\AuthorizeImg;
-            $AuthModel->picture=$publicId;
-            $AuthModel->created_by=$_SESSION['userid'];
-            $AuthModel->save();
-
-            \Cloudinary\Uploader::upload($file->tempName, array("folder" => "authorizedimage/","public_id" =>$publicId ));
-
+            $file=basename($_FILES["file"]["name"]);
+            $publicId=$_SESSION['userid']."_".md5($file);
+            $uploadCloudinary=\Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"],
+                array("folder" => "authorizedimage/",
+                    "public_id" =>$publicId ));
+            if($uploadCloudinary){
+                $authModel=new AuthorizeImg();
+                $authModel->created_by=$_SESSION['userid'];
+                $authModel->auth_img=$publicId;
+                $authModel->created_on=date('Y-m-d H:i:s');
+                $authModel->asset_id=$uploadCloudinary['asset_id'];
+                $authModel->public_id=$uploadCloudinary['public_id'];
+                $authModel->img_url=$uploadCloudinary['secure_url'];
+                $authModel->save(false);
+            }
         }
-        return $this->render('cloud',['model'=>$model]);
-        //  }
     }
 
     public function actionReslist(){
         $resultArray=[];
-        $model=new AuthorizeImg();
-        $api = new \Cloudinary\Api();
-        $result = $api->resource('',["type" => "upload", "max_results" => 5000]);
-        foreach ($result['resources'] as $key=>$val){
-            $publicId=explode('/',$val['public_id']);
-            $resultArray[$key]['url']=$val['secure_url'];
-            $resultArray[$key]['type']=$publicId[0];
-            if($publicId[0] =='authorizedimage'){
-                $resultArray[$key]['name']=$publicId;
-            }
-        }
-        //    echo "<pre>";print_r($resultArray);die;
-        return $this->render('resgrid',['resultarr'=>$resultArray]);
+        $AuthImgModel=AuthorizeImg::find()->where('created_by =:user',
+            [':user'=>$_SESSION['userid']])->all();
+        return $this->render('resgrid',['resultarr'=>$AuthImgModel]);
     }
 
     public function actionUserlist(){
-        $UserModel=User::find()->where('user_type=:type',[':type'=>'U'])->asArray()->all();
+        $UserModel=User::find()->select(['user.*','A.channel_api','A.channel_id'])->
+        leftJoin('device_master as A','A.id=device')
+            ->where('user_type=:type',
+            [':type'=>'U'])->asArray()->all();
         return $this->render('listusers',['resultarr'=>$UserModel]);
     }
     public function actionChangestatus(){
@@ -234,5 +228,43 @@ class DashboardController extends \yii\web\Controller
     }
     public function actionMapshow(){
         return $this->render('map');
+    }
+
+    public function actionClouddeletetrack(){
+        \Cloudinary::config(array(
+            'cloud_name' => 'project301220',
+            'api_key' => '138435171694115',
+            'api_secret' => 'ZUpVJ3PPWazj4hO3NDm7pyKXM4o',
+        ));
+        if(isset($_GET['id'])){
+            $api = new \Cloudinary\Api();
+            $api->delete_resources([$_GET['id']], $options = array());
+            AuthorizeImg::deleteAll('public_id=:id',[':id'=>$_GET['id']]);
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Deleted Successfully" ];
+        }
+        return  json_encode($reTEngineArr);
+    }
+
+    public function actionEnginetracker(){
+        $user=base64_decode($_GET['user']);
+        $device=base64_decode($_GET['device']);
+
+        $Etracker=EngineTracker::find()->where('created_by=:by and device_id=:device',
+            [':by'=>$user,':device'=>$device])->one();
+        if(empty($Etracker)){
+            $Etracker=new EngineTracker();
+            $Etracker->status="ON";
+        }else{
+            $Etracker->status=$Etracker->status=="ON"?'OFF':'ON';
+        }
+        $Etracker->created_at=date('Y-m-d H:i:s');
+        $Etracker->created_by=$user;
+        $Etracker->device_id=$device;
+        if($Etracker->save(false)){
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Status Changed Successfully" ];
+        }else{
+            $reTEngineArr=['flag'=>'E','Code'=>500,'msg'=>"Something Went Wrong" ];
+        }
+        return  json_encode($reTEngineArr);
     }
 }

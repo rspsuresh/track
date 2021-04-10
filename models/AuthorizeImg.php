@@ -2,16 +2,18 @@
 
 namespace app\models;
 
-use nikosid\cloudinary\CloudinaryBehavior;
 use Yii;
 
 /**
  * This is the model class for table "authorize_img".
  *
  * @property int $id
- * @property string $picture
+ * @property string $asset_id
  * @property int $created_by
- * @property string $created_on
+ * @property string|null $created_on
+ * @property string $public_id
+ * @property string $auth_img
+ * @property string $img_url
  */
 class AuthorizeImg extends \yii\db\ActiveRecord
 {
@@ -22,31 +24,18 @@ class AuthorizeImg extends \yii\db\ActiveRecord
     {
         return 'authorize_img';
     }
-    public function behaviors()
-    {
-        return [
-            'cloudinary' => [
-                'class' => CloudinaryBehavior::class,
-                'attribute' => 'picture',
-                'publicId' => Yii::$app->name . '/authorizedimage/',
-                'thumbs' => [
-                    'large' => ['secure' => true, 'width' => 848, 'height' => 536, 'crop' => 'fill'],
-                    'medium' => ['secure' => true, 'width' => 555, 'height' => 536, 'crop' => 'fill'],
-                    'small' => ['secure' => true, 'width' => 130, 'height' => 125, 'crop' => 'fill'],
-                ],
-            ],
-        ];
-    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['picture', 'created_by', 'created_on'], 'required'],
+            [['asset_id', 'created_by', 'public_id', 'auth_img', 'img_url'], 'required'],
             [['created_by'], 'integer'],
             [['created_on'], 'safe'],
-            ['picture', 'image', 'extensions' => 'jpg, jpeg, gif, png', 'on' => ['insert', 'update']],
+            [['asset_id'], 'string', 'max' => 250],
+            [['public_id', 'auth_img', 'img_url'], 'string', 'max' => 255],
         ];
     }
 
@@ -57,9 +46,12 @@ class AuthorizeImg extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'picture' => 'Picture',
+            'asset_id' => 'Asset ID',
             'created_by' => 'Created By',
             'created_on' => 'Created On',
+            'public_id' => 'Public ID',
+            'auth_img' => 'Auth Img',
+            'img_url' => 'Img Url',
         ];
     }
 }

@@ -152,7 +152,6 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                         <?php } else { ?>
                         window.location.href="<?=Yii::$app->urlManager->createUrl(['dashboard/index?flag='])?>"+obj.flag;
                         <?php } ?>
-
                     }else{
                         swal("Error", obj.msg, "error");
                         $("#register")[0].reset();

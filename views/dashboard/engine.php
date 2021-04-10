@@ -7,7 +7,7 @@ $EngineOnReq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=1
 $EngineOffREq="https://api.thingspeak.com/update?api_key=".$channelapi."&field2=0";
 $EngineModel=EngineTracker::find()->where('created_by=:created_by',
     [':created_by'=>$_SESSION['userid']])->one();
-//echo "<pre>";print_r($EngineModel);die;
+
 ?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="<?=\Yii::getAlias('@web');?>/dist/assets/card.css">
