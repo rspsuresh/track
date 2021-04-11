@@ -27,7 +27,10 @@ class DashboardController extends \yii\web\Controller
     {
        // echo "<pre>";print_r($_SESSION);die;
         if($_SESSION['usertype'] =="A") {
-            return $this->render('resgrid');
+             $resultArray=[];
+        $AuthImgModel=AuthorizeImg::find()->where('created_by =:user',
+            [':user'=>$_SESSION['userid']])->all();
+        return $this->render('resgrid',['resultarr'=>$AuthImgModel]);
         }else{
             return $this->render('index');
         }

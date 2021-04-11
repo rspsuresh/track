@@ -79,7 +79,7 @@
                         pointerEvents: 'auto'
                     });
                     $("#receiverequest").removeClass('section-blur');
-                },500)
+                },2000)
             }
         })
         }
@@ -92,25 +92,10 @@
                 console.log(parSECDE);
                 let firstLevel=JSON.parse(parSECDE.data);
                 let secondLevel=JSON.parse(firstLevel);
-                console.log(secondLevel.feeds[0].field3)
-                window.open('<?=Yii::$app->urlManager->createUrl('dashboard/mapshow')?>?lat=13&lng=80', '_blank');
-
-                // if (obj.flag === "S" ) {
-                //     swal("Success", obj.msg, "success");
-                //     if(ltln.input(',')){
-                //         $("#map").show();
-                //         let seprateLtLN=ltln.split(',');
-                //         lat=seprateLtLN[0];
-                //         long=seprateLtLN[1];
-                //         console.log(lat,long,'sdfdsfsdfds')
-                //         $.getScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyB6jDIrWc2mVd0jqBCgJA4R0VfcM7SEJ7Q&callback=initMap&libraries=&v=weekly", function() {
-                //         });
-                //     }
-                //
-                // }else{
-                //     swal("Error", obj.msg, "Error");
-                // }
-                //location.reload();
+                let lngLnSplit=secondLevel.feeds[0].field3?secondLevel.feeds[0].field3.split(','):[13,80];
+                if(secondLevel.feeds[0].field3 !=3){
+                   window.open('<?=Yii::$app->urlManager->createUrl('dashboard/mapshow')?>?lat='+lngLnSplit[0]+'&lng='+lngLnSplit[1], '_blank');
+                }
             }
         });
     }
