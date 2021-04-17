@@ -49,7 +49,6 @@ class DashboardController extends \yii\web\Controller
             }
             return $this->render('create',['user'=>$User,'device'=>$deviceMst]);
         }
-
     }
     public function saveandupdate($data){
         if(!empty($data)){
@@ -82,7 +81,10 @@ class DashboardController extends \yii\web\Controller
             $UserModel->username=$data['username'];
             $UserModel->age=$data['age'];
             $UserModel->gender=$data['gender'];
-            $UserModel->device=$data['device'];
+            if(isset($data['device'])){
+                $UserModel->device=$data['device'];
+            }
+
             $UserModel->address=$data['address'];
             if($UserModel->isNewRecord){
                 $UserModel->user_type="U";
@@ -90,7 +92,7 @@ class DashboardController extends \yii\web\Controller
             }
             $UserModel->password=$data['password'];
             $UserModel->user_createdat=date('Y-m-d H:i:s');
-            if(isset($_FILES)){
+            if(isset($_FILES["profile"]["name"]) && !empty($_FILES["profile"]["name"])){
                 $target_dir = "assets/uploads/";
                 $target_file = $target_dir . basename($_FILES["profile"]["name"]);
                 move_uploaded_file($_FILES["profile"]["tmp_name"], $target_file);

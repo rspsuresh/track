@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="#0" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>S</b>MT</span>
         <!-- logo for regular state and mobile devices -->
@@ -131,9 +131,10 @@
                                 <a  href="<?=Yii::$app->urlManager->createAbsoluteUrl(['dashboard/create',
                                     'id'=>base64_encode($_SESSION['userid'])])?>" class="btn btn-default btn-flat">Profile</a>
                             </div>
-                            <div class="pull-left">
-                                <a  href="<?=Yii::$app->urlManager->createAbsoluteUrl(['dashboard/create',
-                                    'id'=>base64_encode($_SESSION['userid'])])?>" class="btn btn-default btn-flat">Account Setting</a>
+                            <div class="pull-left"  style="margin-left: 10px">
+                                <a class="btn btn-default btn-flat"
+                                        href="<?=Yii::$app->urlManager->createAbsoluteUrl(['dashboard/create',
+                                    'id'=>base64_encode($_SESSION['userid']),'ac'=>1])?>">Account</a>
                             </div>
                             <div class="pull-right">
                                 <a href="<?=Yii::$app->urlManager->createAbsoluteUrl(['site/logout'])?>"
@@ -146,3 +147,4 @@
         </div>
     </nav>
 </header>
+

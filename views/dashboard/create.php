@@ -10,6 +10,9 @@
 <?php
 $disabledCheck=isset($_GET['id'])?'readonly':'';
 $LabelCheck=isset($_GET['id'])?'Update':'Create';
+$fordropdown=isset($_GET['id'])?'disabled':'';
+$nonorblock=isset($_GET['ac'])?'none':'block';
+$LabelCheck=isset($_GET['ac'])?'Account Settings ':$LabelCheck;
 ?>
 <section class="content">
     <div class="row">
@@ -40,57 +43,65 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Confirm Password</label>
+                            <div class="col-sm-10">
+                                <input type="password" value="<?=$user->password?>" name="confirmpassword" required class="form-control" id="confirmpassword" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Mobile Number</label>
                             <div class="col-sm-10">
                                 <input required type="text" value="<?=$user->mobile?>" <?=$disabledCheck?> maxlength="12" name="mobilenumber" class="form-control" id="mobilenumber" placeholder="Mobile number">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Gender</label>
-                            <div class="col-sm-10">
-                                <select  name="gender" id="gender" class="form-control" required>
-                                    <option <?=$user->gender =='M'?'selected':''?> value="M">Male</option>
-                                    <option <?=$user->gender =='F'?'selected':''?> value="F">Female</option>
-                                </select>
+                        <div style="display: <?=$nonorblock?>">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-10">
+                                    <select  name="gender" id="gender" class="form-control" required>
+                                        <option <?=$user->gender =='M'?'selected':''?> value="M">Male</option>
+                                        <option <?=$user->gender =='F'?'selected':''?> value="F">Female</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Age</label>
-                            <div class="col-sm-10">
-                                <input type="text"  value="<?=$user->age?>" maxlength="2" required class="form-control" id="age" name="age" placeholder="Age">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Age</label>
+                                <div class="col-sm-10">
+                                    <input type="text"  value="<?=$user->age?>" maxlength="2" required class="form-control" id="age" name="age" placeholder="Age">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Mail Id</label>
-                            <div class="col-sm-10">
-                                <input type="email"value="<?=$user->email?>"  <?=$disabledCheck?> required class="form-control" name="email" id="email" placeholder="Mail Id">
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Mail Id</label>
+                                <div class="col-sm-10">
+                                    <input type="email"value="<?=$user->email?>"  <?=$disabledCheck?> required class="form-control" name="email" id="email" placeholder="Mail Id">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Device</label>
-                            <div class="col-sm-10">
-                                <select  name="device" id="device" class="form-control" required>
-                                  <?php foreach ($device as $key =>$val) { ?>
-                                    <option value='<?=$val['id']?>'><?=$val['channel_id'].'-'.$val['channel_api']?></option>
-                                    <?php } ?>
-                                </select>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Device</label>
+                                <div class="col-sm-10">
+                                    <select    <?=$fordropdown?>  name="device" id="device" class="form-control" required>
+                                        <?php foreach ($device as $key =>$val) { ?>
+                                            <option value='<?=$val['id']?>'><?=$val['channel_id'].'-'.$val['channel_api']?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <input type="hidden" id="userid" name="userid" value="<?=$user->u_id?>">
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Address</label>
-                            <div class="col-sm-10">
-                                <textarea  class="form-control" name="address"><?php echo htmlspecialchars($user->address, ENT_QUOTES, 'UTF-8') ?></textarea>
+                            <input type="hidden" id="userid" name="userid" value="<?=$user->u_id?>">
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-10">
+                                    <textarea  class="form-control" name="address"><?php echo htmlspecialchars($user->address, ENT_QUOTES, 'UTF-8') ?></textarea>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Profile</label>
-                            <div class="col-sm-10">
-                                <input type="file" name="profile" accept="image/*">
-                                <?php if($user->user_profile) { ?>
-                                    <img width=50 height=50 class="img-circle" src="<?=Yii::$app->request->baseUrl?>/assets/uploads/<?=$user->user_profile?>">
-                                <?php } ?>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-2 control-label">Profile</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="profile" accept="image/*">
+                                    <?php if($user->user_profile) { ?>
+                                        <img width=50 height=50 class="img-circle" src="<?=Yii::$app->request->baseUrl?>/assets/uploads/<?=$user->user_profile?>">
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,6 +127,10 @@ $LabelCheck=isset($_GET['id'])?'Update':'Create';
                 required:true
             },
             password: "required",
+            confirmpassword : {
+                minlength : 5,
+                equalTo : "#password"
+            },
             age: "required",
             gender: "required",
             device: "required",
