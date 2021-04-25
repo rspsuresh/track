@@ -62,7 +62,18 @@
     .float-rightwithclass {
         float: right;
         margin-right: 10px;
+    }
+    .blink_me {
+        animation: blinker 5s linear infinite;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
 </style>
+<title>User Management</title>
 <div class="row">
     <div class="col-xs-12">
 
@@ -87,7 +98,8 @@
                         <th>Device</th>
                         <th>Engine on/off</th>
                         <th>Location Request</th>
-                        <th>Status</th>
+                        <th>Subcription</th>
+                        <th>Expire Soon</th>
                     </tr>
                     </tr>
                     </thead>
@@ -97,8 +109,6 @@
                             <td><?=$key+1?></td>
                             <td><?=$rowval['mobile']?></td>
                             <td><?=$rowval['email']?></td>
-<!--                            <td>--><?//=$rowval['gender']?><!--</td>-->
-<!--                            <td>--><?//=$rowval['age']?><!--</td>-->
                             <td><?=$rowval['channel_api']?></td>
                             <td>
                                 <?php if($rowval['user_status'] =="A") { ?>
@@ -130,17 +140,35 @@
 
                             </td>
                             <td>
-                                jhkjhkjh
+                                -
                             </td>
                             <td>
-                                    <label class="switch">
-                                        <input type="checkbox"
-                                            <?=$rowval['user_status']=="A"?'checked':''?>
-                                               onchange="statuschange('<?=$rowval['u_id']?>',event)">
-                                        <span class="slider round"></span>
-                                    </label>
-                                <?php if($rowval['user_status'] =='A') { ?>
-                                    <button  onclick="sendmail('<?=$rowval['u_id']?>')" class="btn btn-info pull-right">Mail</button>
+                                <?php if($rowval['user_sbs_status'] =='I') { ?>
+                                    <button type="button"
+                                            onclick="enabletheUser('<?=$rowval['u_id']?>','A')"
+                                            data-color="cyan" class="btn btn bg-primary waves-effect">ON
+                                    </button>
+                                <?php } else { ?>
+                                    <button type="button"
+                                            onclick="enabletheUser('<?=$rowval['u_id']?>','I')"
+                                            data-color="red"
+                                            class="btn bg-red waves-effect">
+                                        OFF
+                                    </button>
+                                <?php } ?>
+                            </td>
+                            <td>
+                                <?php
+                                $curdatePlus = strtotime(date('d-m-Y',strtotime('+15 day')));
+                                $curdateNow = strtotime(date('d-m-Y'));
+                                $Dbdate = strtotime(date('d-m-Y',strtotime($rowval['user_sbs_date'])));
+
+                                if(($curdatePlus > $Dbdate) || ($curdateNow >$Dbdate) ) { ?>
+                                    <button type="button" onclick="mailintimation('<?=$rowval['u_id']?>')"
+                                            data-color="red" class="btn bg-maroon waves-effect blink_me">Mail
+                                    </button>
+                                <?php } else {  ?>
+                                   -
                                 <?php } ?>
                             </td>
                         </tr>
@@ -167,34 +195,7 @@
             'autoWidth'   : false
         })
     })
-    function statuschange(id,event){
-        $.ajax({
-            type: 'GET',
-            url: '<?=Yii::$app->urlManager->createUrl('dashboard/changestatus')?>?id='+id,
-            success:function(data){
-                var obj = JSON.parse(data);
-                if (obj.flag === "S") {
-                    swal("Success", obj.msg, "success");
-                }else{
-                    swal("Error", obj.msg, "Error");
-                }
-            }
-        });
-    }
-    function sendmail(user){
-        $.ajax({
-            type: 'GET',
-            url: '<?=Yii::$app->urlManager->createUrl('dashboard/sendmail')?>?id='+user,
-            success:function(data){
-                var obj = JSON.parse(data);
-                if (obj.flag === "S") {
-                    swal("Success", obj.msg, "success");
-                }else{
-                    swal("Error", obj.msg, "error");
-                }
-            }
-        });
-    }
+
     function locktrack(user,device,status,channel){
         $.ajax({
             type: 'GET',
@@ -214,5 +215,59 @@
                 location.reload();
             }
         })
+    }
+    function enabletheUser(user,status){
+        let titletxt=(status=='A')?'Are You Sure Want to Active':'Are You Sure Want to Inactive';
+        let deeptext=(status=='A')?"Once Activated user will be active,Subscription enabled,Mail for access web":"Once Deactivated user will be Incative,Subscription become Disable";
+        swal({
+            title: titletxt,
+            text: deeptext,
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '<?=Yii::$app->urlManager->createUrl('dashboard/changestatus')?>?id='+user,
+                        success:function(data){
+                            var obj = JSON.parse(data);
+                            if (obj.flag === "S") {
+                                swal("Success", obj.msg, "success");
+                            }else{
+                                swal("Error", obj.msg, "Error");
+                            }
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+    }
+    function mailintimation(user){
+        swal({
+            title: 'Are you sure want to intimate?',
+            text: 'If yes mail will trigger to user regards subscription',
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: 'GET',
+                        url: '<?=Yii::$app->urlManager->createUrl('dashboard/intimate')?>?id='+user,
+                        success:function(data){
+                            var obj = JSON.parse(data);
+                            if (obj.flag === "S") {
+                                swal("Success", obj.msg, "success");
+                            }else{
+                                swal("Error", obj.msg, "Error");
+                            }
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
     }
 </script>

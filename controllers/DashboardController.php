@@ -25,14 +25,17 @@ class DashboardController extends \yii\web\Controller
     }
     public function actionIndex()
     {
-       // echo "<pre>";print_r($_SESSION);die;
-        if($_SESSION['usertype'] =="A") {
+        if($_SESSION['usertype'] =="U") {
              $resultArray=[];
-        $AuthImgModel=AuthorizeImg::find()->where('created_by =:user',
+            $AuthImgModel=AuthorizeImg::find()->where('created_by =:user',
             [':user'=>$_SESSION['userid']])->all();
-        return $this->render('resgrid',['resultarr'=>$AuthImgModel]);
+             return $this->render('resgrid',['resultarr'=>$AuthImgModel]);
         }else{
-            return $this->render('index');
+           $UserModel=User::find()->select(['user.*','A.channel_api','A.channel_id'])->
+        leftJoin('device_master as A','A.id=device')
+            ->where('user_type=:type',
+            [':type'=>'U'])->asArray()->all();
+        return $this->render('listusers',['resultarr'=>$UserModel]);
         }
 
     }
@@ -56,6 +59,7 @@ class DashboardController extends \yii\web\Controller
             if(!empty($userid)){
                 $UserModel=User::findOne($userid);
                 $msg='Updated Successfully';
+                $UserModel->user_sbs_date=date('Y-m-d',strtotime("+$UserModel->user_sbs_period months"));
             }else {
                 $UserModel = new User();
                 $msg='Created Successfully';
@@ -205,20 +209,79 @@ class DashboardController extends \yii\web\Controller
             [':type'=>'U'])->asArray()->all();
         return $this->render('listusers',['resultarr'=>$UserModel]);
     }
+public function actionIntimate(){
+    $filterId=intval($_GET['id']);
+    $UserModel=User::findOne($filterId);
+    $intimateMail=$this->sbsmail();
+    return $intimateMail;
+}
     public function actionChangestatus(){
         $filterId=intval($_GET['id']);
         $UserModel=User::findOne($filterId);
-        $UserModel->user_status=$UserModel->user_status=='A'?'I':'A';
+        $UserModel->user_status=($UserModel->user_status=='A')?'I':'A';
+       // $UserModel->user_sbs_date=date('Y-m-d', strtotime("+$UserModel->user_sbs_period months"));
+        $UserModel->user_sbs_status=($UserModel->user_sbs_status=="A")?"I":"A";
         if($UserModel->save(false)){
+            if($UserModel->user_status=='A'){
+                $this->Sendmail($UserModel->u_id);
+            }else{
+                $this->SendmailIncative($UserModel->u_id);
+            }
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Status Changed Successfully" ];
         }else{
             $reTEngineArr=['flag'=>'E','Code'=>500,'msg'=>"Something Went Wrong" ];
         }
         return  json_encode($reTEngineArr);
     }
-
-    public function actionSendmail(){
+    public function sbsmail(){
         $filterId=intval($_GET['id']);
+        $UserModel=User::findOne($filterId);
+        $to = 'rsprampaul14321@gmail.com';
+        $subject = 'AI Smart Tracking - User Subscription Expires Soon';
+        $from = 'peterparker@email.com';
+// To send HTML mail, the Content-type header must be set
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Create email headers
+        $headers .= 'From: '.$from."\r\n".
+            'Reply-To: '.$from."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+// Sending email
+        $message=\Yii::$app->controller->renderPartial('sbsmail',['usermodel'=>$UserModel],false,true);
+        if(mail($to, $subject, $message, $headers)){
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
+        } else{
+            $reTEngineArr=['flag'=>'E','Code'=>200,'msg'=>"Error in mail send" ];
+        }
+        return  json_encode($reTEngineArr);
+    }
+    public function SendmailIncative($id){
+
+        $filterId=intval($id);
+        $UserModel=User::findOne($filterId);
+        $to = 'rsprampaul14321@gmail.com';
+        $subject = 'AI Smart Tracking - User Inactive';
+        $from = 'peterparker@email.com';
+// To send HTML mail, the Content-type header must be set
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Create email headers
+        $headers .= 'From: '.$from."\r\n".
+            'Reply-To: '.$from."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+// Sending email
+        $message=\Yii::$app->controller->renderPartial('passwordinviteinactive',['usermodel'=>$UserModel],false,true);
+        if(mail($to, $subject, $message, $headers)){
+            $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
+        } else{
+            $reTEngineArr=['flag'=>'E','Code'=>200,'msg'=>"Error in mail send" ];
+        }
+        return  json_encode($reTEngineArr);
+    }
+    public function Sendmail($id){
+        $filterId=intval($id);
         $UserModel=User::findOne($filterId);
         $to = 'rsprampaul14321@gmail.com';
         $subject = 'AI Smart Tracking - Password Invite';
@@ -233,7 +296,12 @@ class DashboardController extends \yii\web\Controller
 
 // Sending email
         $message= $content=\Yii::$app->controller->renderPartial('passwordinvite',['usermodel'=>$UserModel],false,true);
+        $messageSubscription=\Yii::$app->controller->renderPartial('subscription',
+            ['usermodel'=>$UserModel],false,true);
+
         if(mail($to, $subject, $message, $headers)){
+            $subscrSubject="AI Smart Tracking - Subscription";
+            mail($to, $subscrSubject, $messageSubscription, $headers);
             $reTEngineArr=['flag'=>'S','Code'=>200,'msg'=>"Mail Send Successfully"];
         } else{
             $reTEngineArr=['flag'=>'E','Code'=>200,'msg'=>"Error in mail send" ];

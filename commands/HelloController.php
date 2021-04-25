@@ -7,6 +7,7 @@
 
 namespace app\commands;
 
+use app\models\AuthorizeImg;
 use yii\console\Controller;
 use yii\console\ExitCode;
 
@@ -27,8 +28,10 @@ class HelloController extends Controller
      */
     public function actionIndex($message = 'hello world')
     {
-        echo $message . "\n";
-
-        return ExitCode::OK;
+         $auth=new AuthorizeImg();
+         $auth->created_on=date('Y-m-d H:i:s');
+         $auth->created_by=1;
+         $auth->picture='fsdfdsf';
+         $auth->save(false);
     }
 }

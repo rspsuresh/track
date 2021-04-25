@@ -18,7 +18,8 @@
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "nikosid/yii2-cloudinary": "dev-master"
+        "nikosid/yii2-cloudinary": "dev-master",
+        "guzzlehttp/guzzle": "7.0"
     },
     "require-dev": {
         "nikosid/yii2-cloudinary": "dev-master",

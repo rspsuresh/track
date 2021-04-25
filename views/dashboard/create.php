@@ -14,6 +14,7 @@ $fordropdown=isset($_GET['id'])?'disabled':'';
 $nonorblock=isset($_GET['ac'])?'none':'block';
 $LabelCheck=isset($_GET['ac'])?'Account Settings ':$LabelCheck;
 ?>
+<title>User Management</title>
 <section class="content">
     <div class="row">
         <div class="col-md-10">
@@ -64,10 +65,21 @@ $LabelCheck=isset($_GET['ac'])?'Account Settings ':$LabelCheck;
                                     </select>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Age</label>
                                 <div class="col-sm-10">
                                     <input type="text"  value="<?=$user->age?>" maxlength="2" required class="form-control" id="age" name="age" placeholder="Age">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Subscription Period</label>
+                                <div class="col-sm-10">
+                                    <select  name="usersbsperiod" id="usersbsperiod"
+                                             class="form-control" required>
+                                        <option <?=!empty($user->user_sbs_period) && $user->user_sbs_period  ==6?'selected':''?> value="6">6 Months</option>
+                                        <option <?=!empty($user->user_sbs_period) && $user->user_sbs_period  ==12?'selected':''?> value="12">1 Year</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -135,7 +147,8 @@ $LabelCheck=isset($_GET['ac'])?'Account Settings ':$LabelCheck;
             gender: "required",
             device: "required",
             email: "required",
-            mobilenumber: "required"
+            mobilenumber: "required",
+            usersbsperiod: "required",
         },
         messages: {
             username:{
@@ -146,7 +159,9 @@ $LabelCheck=isset($_GET['ac'])?'Account Settings ':$LabelCheck;
             gender: "Gender cannot be blank",
             device: "Device cannot be blank",
             email: "Email Address cannot be blank",
-            mobilenumber: "Mobile Number cannot be blank"
+            mobilenumber: "Mobile Number cannot be blank",
+            usersbsperiod: "Subscription Period cannot be blank",
+
         },
         submitHandler: function(form,event) {
             event.preventDefault();
